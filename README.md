@@ -1,0 +1,2 @@
+# linter
+General lint configuration.
