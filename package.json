@@ -1,5 +1,5 @@
 {
-  "name": "@rh/plop-generators",
+  "name": "@rhao/plop-generators",
   "type": "module",
   "version": "0.0.1",
   "description": "Plop generators.",
