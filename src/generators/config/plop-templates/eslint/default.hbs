@@ -1,0 +1,61 @@
+const { defineConfig } = require('eslint-define-config')
+
+module.exports = defineConfig({
+  root: true,
+  extends: ['@antfu'],
+  rules: {
+    // common
+    'array-element-newline': ['error', 'consistent'],
+    'array-bracket-newline': ['error', 'consistent'],
+    'function-paren-newline': ['error', 'consistent'],
+    'arrow-parens': ['error', 'always'],
+    'quote-props': ['error', 'as-needed'],
+    'object-shorthand': ['off'],
+    'space-before-blocks': 'error',
+
+    // antfu
+    'antfu/if-newline': 'off',
+{{#if hasVue}}
+
+    // vue
+    'vue/no-setup-props-destructure': 'error',
+    'vue/component-name-in-template-casing': [
+      'error',
+      'PascalCase',
+      { registeredComponentsOnly: false },
+    ],
+    {{#if isVue2}}
+    'vue/no-deprecated-destroyed-lifecycle': ['off'],
+    'vue/no-deprecated-dollar-listeners-api': ['off'],
+    'vue/no-deprecated-dollar-scopedslots-api': ['off'],
+    'vue/no-deprecated-events-api': ['off'],
+    'vue/no-deprecated-filter': ['error'],
+    'vue/no-deprecated-functional-template': ['error'],
+    'vue/no-deprecated-html-element-is': ['error'],
+    'vue/no-deprecated-inline-template': ['error'],
+    'vue/no-deprecated-props-default-this': ['warn'],
+    'vue/no-deprecated-router-link-tag-prop': ['error'],
+    'vue/no-deprecated-scope-attribute': ['error'],
+    'vue/no-deprecated-slot-attribute': ['off'],
+    'vue/no-deprecated-slot-scope-attribute': ['off'],
+    'vue/no-deprecated-v-bind-sync': ['off'],
+    'vue/no-deprecated-v-is': ['error'],
+    'vue/no-deprecated-v-on-native-modifier': ['off'],
+    'vue/no-deprecated-v-on-number-modifiers': ['off'],
+    'vue/no-deprecated-vue-config-keycodes': ['error'],
+    'vue/no-v-for-template-key-on-child': ['off'],
+    'vue/require-slots-as-functions': ['off'],
+    'vue/custom-event-name-casing': ['off'],
+    'vue/no-multiple-template-root': ['error'],
+    'vue/no-v-for-template-key': ['error'],
+    'vue/no-v-model-argument': ['error'],
+    'vue/valid-v-bind-sync': ['error'],
+    {{/if}}
+{{/if}}
+{{#if hasTS}}
+
+    // ts
+    '@typescript-eslint/ban-ts-comment': 'off',
+  },
+{{/if}}
+})

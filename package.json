@@ -1,0 +1,82 @@
+{
+  "name": "@rh/plop-generators",
+  "type": "module",
+  "version": "0.0.0",
+  "description": "Plop generators.",
+  "author": "RayHao <https://github.com/l246804>",
+  "license": "MIT",
+  "homepage": "https://github.com/l246804/plop-generators",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/l246804/plop-generators"
+  },
+  "bugs": {
+    "url": "https://github.com/l246804/plop-generators/issues"
+  },
+  "keywords": [
+    "plop",
+    "generators",
+    "templates"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    },
+    "./**/*": {
+      "types": "./**/*.d.ts",
+      "require": "./**/*.cjs",
+      "import": "./**/*.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "prepare": "run-p gen:index",
+    "build": "unbuild",
+    "plop": "plop --plopfile plopfile.cjs",
+    "gen:index": "tsx scripts/genIndex.ts",
+    "release": "release-it"
+  },
+  "peerDependencies": {
+    "plop": ">=3"
+  },
+  "dependencies": {
+    "@antfu/install-pkg": "^0.1.1",
+    "consola": "^3.2.3",
+    "fast-glob": "^3.3.0",
+    "inquirer-file-tree-selection-prompt": "^2.0.5",
+    "kolorist": "^1.8.0",
+    "local-pkg": "^0.4.3",
+    "lodash-es": "^4.17.21"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.39.8",
+    "@esbuild-kit/cjs-loader": "^2.4.2",
+    "@release-it/conventional-changelog": "^7.0.0",
+    "@types/lodash-es": "^4.17.8",
+    "@types/node": "^20.4.2",
+    "eslint": "^8.45.0",
+    "eslint-define-config": "^1.21.0",
+    "node-plop": "0.31.1",
+    "npm-run-all": "^4.1.5",
+    "plop": "^3.1.2",
+    "release-it": "^16.1.2",
+    "tsx": "^3.12.7",
+    "typescript": "^5.1.6",
+    "unbuild": "^1.2.1"
+  }
+}
