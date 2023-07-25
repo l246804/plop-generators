@@ -1,5 +1,12 @@
 
 
+## [0.1.1](https://github.com/l246804/plop-generators/compare/v0.1.0...v0.1.1) (2023-07-25)
+
+
+### Bug fixes
+
+* 修复参数配置无效 ([3ee2cf8](https://github.com/l246804/plop-generators/commit/3ee2cf841eb8112e599d970614c6af1e40dad811))
+
 ## [0.1.0](https://github.com/l246804/plop-generators/compare/v0.0.2...v0.1.0) (2023-07-25)
 
 
