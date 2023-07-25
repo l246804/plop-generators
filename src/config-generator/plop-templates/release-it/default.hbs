@@ -9,6 +9,10 @@
   "github": {
     "release": false
   },
+  "hooks": {
+    "before:init": [],
+    "after:bump": "echo Successfully released ${name} v${version} to ${repo.repository}."
+  },
   // https://github.com/release-it/release-it/blob/main/docs/plugins.md
   "plugins": {
 {{#if changelog}}

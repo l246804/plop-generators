@@ -1,3 +1,5 @@
-require('@esbuild-kit/cjs-loader')
+const { setupGenerators } = require('./dist/index.cjs')
 
-module.exports = require('./plopfile.ts').default
+module.exports = function (plop) {
+  setupGenerators(plop)
+}

@@ -1,16 +1,19 @@
-import type { NodePlopAPI } from 'plop'
 import { installPackage } from '@antfu/install-pkg'
-import { getTemplateAnswers, getTemplatePrompts, getTemplateTypes, readMetadata } from './utils/template'
-import { ensureFunction } from './utils/fn'
-import { setupFileTreeSelectionPrompt } from './utils/fileTreeSelectionPrompt'
+import { getTemplateAnswers, getTemplatePrompts, getTemplateTypes } from './utils/template'
+import type { TemplateMetadata } from './types/template'
+import { ensureFunction } from '@/utils/fn'
 import logger from '@/utils/logger'
+import type { GeneratorModule } from '@/types/generator-module'
 
-export function setupGenerator(plop: NodePlopAPI) {
-  const templates = readMetadata()
+const setup: GeneratorModule = (plop) => {
+  const templates = Object.values(
+    import.meta.glob<TemplateMetadata>('./plop-templates/**/metadata.ts', {
+      import: 'default',
+      eager: true,
+    }),
+  )
 
   if (templates.length === 0) return logger.warn('No templates found.')
-
-  setupFileTreeSelectionPrompt(plop)
 
   plop.setGenerator('config-generator', {
     description: 'Generate configuration file.',
@@ -47,3 +50,5 @@ export function setupGenerator(plop: NodePlopAPI) {
     },
   })
 }
+
+export default setup
