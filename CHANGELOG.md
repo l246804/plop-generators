@@ -1,5 +1,17 @@
 
 
+## [0.1.0](https://github.com/l246804/plop-generators/compare/v0.0.2...v0.1.0) (2023-07-25)
+
+
+### Chores
+
+* **config-generator:** 增加参数配置 ([439939c](https://github.com/l246804/plop-generators/commit/439939cf80a1ee9e12f95219e2f649affe16659f))
+
+
+### Docs
+
+* 更新 README.md ([58269ff](https://github.com/l246804/plop-generators/commit/58269ff6aa846d29c19b08d9a0ccf8d2deb4df1b))
+
 ## [0.0.2](https://github.com/l246804/plop-generators/compare/v0.0.1...v0.0.2) (2023-07-25)
 
 
