@@ -5,7 +5,14 @@ import { ensureFunction } from '@/utils/fn'
 import logger from '@/utils/logger'
 import type { GeneratorModule } from '@/types/generator-module'
 
-const setup: GeneratorModule = (plop) => {
+export interface ConfigGeneratorOptions {
+  /**
+   * 自动安装依赖时的可选参数
+   */
+  additionalArgs?: string[]
+}
+
+const setup: GeneratorModule<ConfigGeneratorOptions> = (plop, options) => {
   const templates = Object.values(
     import.meta.glob<TemplateMetadata>('./plop-templates/**/metadata.ts', {
       import: 'default',
@@ -44,7 +51,12 @@ const setup: GeneratorModule = (plop) => {
       if (!metadata) return []
 
       const data = getTemplateAnswers(type, answers)
-      if (autoInstall) installPackage(ensureFunction(metadata.deps!)(data), { dev: true })
+      if (autoInstall) {
+        installPackage(ensureFunction(metadata.deps!)(data), {
+          dev: true,
+          additionalArgs: options?.additionalArgs,
+        })
+      }
 
       return ensureFunction(metadata.actions)(data) || []
     },
