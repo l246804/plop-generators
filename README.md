@@ -6,26 +6,26 @@ Plop generators.
 
 ```shell
 # npm
-npm i -D plop @rh/plop-generators
+npm i -D plop @rhao/plop-generators
 
 # yarn or pnpm
-pnpm add -D plop @rh/plop-generators
+pnpm add -D plop @rhao/plop-generators
 ```
 
 ## Usage
 
-### create a plopfile.js and configure generators.
+### create a plopfile.js and configure generators
 
 ```ts
 // plopfile.js
-import { setupConfigGenerator } from '@rh/plop-generators'
+import { setupGenerators } from '@rhao/plop-generators'
 
 export default function (plop) {
-  setupConfigGenerator(plop)
+  setupGenerators(plop)
 }
 ```
 
-### add scripts
+### add script
 
 ```jsonc
 // package.json
@@ -36,7 +36,7 @@ export default function (plop) {
 }
 ```
 
-### run shell
+### run command
 
 ```shell
 npm run plop
