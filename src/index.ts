@@ -12,6 +12,6 @@ const generators = import.meta.glob<GeneratorModule>('./*-generator/index.ts', {
 
 export function setupGenerators(plop: NodePlopAPI, options: Recordable<Recordable> = {}) {
   Object.entries(generators).forEach(([key, fn]) => {
-    fn(plop, options?.[camelCase(key)] || {})
+    fn(plop, options?.[camelCase(key.split('/').find((v) => v.endsWith('generator')))] || {})
   })
 }
