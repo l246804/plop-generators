@@ -1,5 +1,13 @@
 
 
+## [0.0.2](https://github.com/l246804/plop-generators/compare/v0.0.1...v0.0.2) (2023-07-25)
+
+
+### Chores
+
+* 更新包名 ([978eec3](https://github.com/l246804/plop-generators/commit/978eec36311d8369d6ff22f11d8e448f469c30e7))
+* 优化代码 ([efbf440](https://github.com/l246804/plop-generators/commit/efbf4406432ee7cc8e3af96023cf361b0ed7bdee))
+
 ## 0.0.1 (2023-07-18)
 
 
