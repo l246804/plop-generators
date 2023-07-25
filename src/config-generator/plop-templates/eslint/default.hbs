@@ -12,9 +12,11 @@ module.exports = defineConfig({
     'quote-props': ['error', 'as-needed'],
     'object-shorthand': ['off'],
     'space-before-blocks': 'error',
+    'operator-linebreak': 'off', // prettier 冲突
 
     // antfu
-    'antfu/if-newline': 'off',
+    'antfu/if-newline': 'off', 
+    'antfu/generic-spacing': 'off', // ts 泛型换行
 {{#if hasVue}}
 
     // vue
@@ -24,7 +26,11 @@ module.exports = defineConfig({
       'PascalCase',
       { registeredComponentsOnly: false },
     ],
+    'vue/max-attributes-per-line': ['error', { singleline: 1 }],
+    'vue/singleline-html-element-content-newline': ['off'], // prettier 冲突
     {{#if isVue2}}
+
+    // vue2
     'vue/no-deprecated-destroyed-lifecycle': ['off'],
     'vue/no-deprecated-dollar-listeners-api': ['off'],
     'vue/no-deprecated-dollar-scopedslots-api': ['off'],
