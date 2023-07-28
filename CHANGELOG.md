@@ -1,5 +1,13 @@
 
 
+## [0.1.2](https://github.com/l246804/plop-generators/compare/v0.1.1...v0.1.2) (2023-07-28)
+
+
+### Chores
+
+* 优化代码 ([4ffe00c](https://github.com/l246804/plop-generators/commit/4ffe00c51824309ab31fc07180403bfd7c67c2e2))
+* **config-generator:** 优化配置项 ([2585b33](https://github.com/l246804/plop-generators/commit/2585b3362fac114ac37300a417a564475c3de2bc))
+
 ## [0.1.1](https://github.com/l246804/plop-generators/compare/v0.1.0...v0.1.1) (2023-07-25)
 
 
