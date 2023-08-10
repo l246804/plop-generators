@@ -1,5 +1,14 @@
 
 
+## [0.3.0](https://github.com/l246804/plop-generators/compare/v0.2.0...v0.3.0) (2023-08-10)
+
+
+### Features
+
+* 🎸 新增 `monorepo` 仓库包发布工具 `changesets` 配置 ([6f3bd18](https://github.com/l246804/plop-generators/commit/6f3bd187ea6f4b7b259f4cb8156c9897f7d30a50))
+* 🎸 新增 `stylelint` 配置 ([d4239ff](https://github.com/l246804/plop-generators/commit/d4239ffff2b711352470c991092a4af79b17d0c8))
+* 🎸 新增 typescript 配置项 ([cc7c157](https://github.com/l246804/plop-generators/commit/cc7c157e4a983035b97a079ca9cadae58722d080))
+
 ## [0.2.0](https://github.com/l246804/plop-generators/compare/v0.1.2...v0.2.0) (2023-08-10)
 
 
