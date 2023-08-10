@@ -1,8 +1,8 @@
 import { resolve } from 'node:path'
 import { cwd } from 'node:process'
-import { getPackageInfoSync, isPackageExists } from 'local-pkg'
+import { isPackageExists } from 'local-pkg'
 import { defineMetadata } from '../../utils/template'
-import { isVue2 } from '@/utils/vue'
+import { getVueInfo, isVue2 } from '@/utils/vue'
 import { $dir } from '@/utils/path'
 
 export default defineMetadata({
@@ -10,7 +10,7 @@ export default defineMetadata({
   description: 'ESLint configuration.',
   deps: ['eslint', 'eslint-define-config', '@antfu/eslint-config'],
   actions: () => {
-    const vueInfo = getPackageInfoSync('vue')
+    const vueInfo = getVueInfo()
     const data = {
       hasVue: !!vueInfo,
       isVue2: isVue2(vueInfo?.version),

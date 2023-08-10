@@ -13,7 +13,10 @@
   "editor.wordWrapColumn": 100,
   "editor.stickyTabStops": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll": true
+    "source.fixAll": true{{#if stylelint}},{{/if}}
+{{#if stylelint}}
+    "source.fixAll.stylelint": true
+{{/if}}
   },
   "git.suggestSmartCommit": false,
   "emmet.includeLanguages": {
@@ -67,6 +70,22 @@
     "jsonc"
   ],
   /* ========================== ESLint ========================== */
+{{#if stylelint}}
+
+  /* ========================== StyleLint ========================== */
+  "stylelint.validate": [
+    "css",
+    "less",
+    "postcss",
+    "scss",
+    "vue"
+  ],
+  "stylelint.enable": true,
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  /* ========================== StyleLint ========================== */
+{{/if}}
 
   /* ========================== Todo Tree ========================== */
   "todo-tree.filtering.useBuiltInExcludes": "file and search excludes",

@@ -1,8 +1,8 @@
 import { resolve } from 'node:path'
 import { cwd } from 'node:process'
-import { getPackageInfoSync } from 'local-pkg'
 import { defineMetadata } from '../../utils/template'
 import { $dir } from '@/utils/path'
+import { getVueInfo } from '@/utils/vue'
 
 export default defineMetadata({
   name: 'vscode',
@@ -14,12 +14,19 @@ export default defineMetadata({
       message: 'Select template purpose:',
       choices: [{ name: 'Frontend configuration.', value: 'frontend' }],
     },
+    {
+      name: 'stylelint',
+      type: 'confirm',
+      message: 'Stylelint?',
+      default: true,
+      when: (answers) => answers?.vscode?.purpose === 'frontend',
+    },
   ],
   actions: (answers) => {
-    const vueInfo = getPackageInfoSync('vue')
     const data = {
       ...answers,
-      hasVue: !!vueInfo,
+      vue: !!getVueInfo(),
+      stylelint: !!answers?.stylelint,
     }
     return [
       {

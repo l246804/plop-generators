@@ -1,12 +1,15 @@
 {
   "recommendations": [
+{{#if stylelint}}
+    "stylelint.vscode-stylelint",
+{{/if}}
+{{#if vue}}
+    "vue.volar",
+    "Vue.vscode-typescript-vue-plugin",
+{{/if}}
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
     "gruntfuggly.todo-tree",
-    "streetsidesoftware.code-spell-checker"{{#if hasVue}},{{/if}}
-{{#if hasVue}}
-    "vue.volar",
-    "Vue.vscode-typescript-vue-plugin"
-{{/if}}
+    "streetsidesoftware.code-spell-checker"
   ]
 }
