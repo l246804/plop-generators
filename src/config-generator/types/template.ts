@@ -7,7 +7,7 @@ export interface TemplateMetadata {
   deps?: string[] | Fn<[any], string[]>
   additionalArgs?: string[]
   prompts?: PromptQuestion[]
-  actions: Actions
+  actions?: Actions
 
   onInstalled?: Fn<[any]>
 }
