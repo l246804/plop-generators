@@ -1,5 +1,19 @@
 
 
+## [0.2.0](https://github.com/l246804/plop-generators/compare/v0.1.2...v0.2.0) (2023-08-10)
+
+
+### Features
+
+* 🎸 新增 `commitizen` 配置项 ([ca0bf64](https://github.com/l246804/plop-generators/commit/ca0bf6459fb65454262b121806102224f1e2ba29))
+
+
+### Chores
+
+* 删除 release-it 对 monorepo 的支持 ([26a76d5](https://github.com/l246804/plop-generators/commit/26a76d558045955c21bc92f5bfc5f0b384bcc714))
+* 修改 release-it 模板 ([655f598](https://github.com/l246804/plop-generators/commit/655f598fd9349ae30c5a6382ff00ed94a12c5a7c))
+* **config-generator:** 优化 eslint 配置 ([8e53353](https://github.com/l246804/plop-generators/commit/8e533536e01196512b7a0494652039134ccc5457))
+
 ## [0.1.2](https://github.com/l246804/plop-generators/compare/v0.1.1...v0.1.2) (2023-07-28)
 
 
