@@ -12,17 +12,10 @@ export default defineMetadata({
       message: 'Changelog?',
       default: true,
     },
-    {
-      type: 'confirm',
-      name: 'monorepo',
-      message: 'Monorepo?',
-      default: false,
-    },
   ],
   deps: (answers) => [
     'release-it',
     answers.changelog && '@release-it/conventional-changelog',
-    answers.monorepo && '@release-it/bumper',
   ],
   actions: (data) => [
     {

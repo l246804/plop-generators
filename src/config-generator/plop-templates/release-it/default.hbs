@@ -13,10 +13,8 @@
     "before:init": [],
     "after:bump": "echo Successfully released ${name} v${version} to ${repo.repository}."
   },
-  // https://github.com/release-it/release-it/blob/main/docs/plugins.md
   "plugins": {
 {{#if changelog}}
-    // https://github.com/release-it/release-it/blob/main/docs/changelog.md
     "@release-it/conventional-changelog": {
       "infile": "CHANGELOG.md",
       "ignoreRecommendedBump": true,
@@ -30,7 +28,7 @@
           },
           {
             "type": "fix",
-            "section": "Bug fixes"
+            "section": "Bug Fixes"
           },
           {
             "type": "chore",
@@ -49,15 +47,6 @@
             "section": "Styles"
           }
         ]
-      }
-    }{{#if monorepo}},{{/if}}
-{{/if}}
-{{#if monorepo}}
-    // https://github.com/release-it/release-it/blob/main/docs/recipes/monorepo.md
-    "@release-it/bumper": {
-      "out": {
-        "file": "package.json",
-        "path": ["dependencies.package-a", "devDependencies.package-b"]
       }
     }
 {{/if}}
