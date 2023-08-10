@@ -1,6 +1,7 @@
 import { resolve } from 'node:path'
 import { cwd } from 'node:process'
 import { defineMetadata } from '../../utils/template'
+import { $dir } from '@/utils/path'
 
 export default defineMetadata({
   name: 'prettier',
@@ -9,7 +10,7 @@ export default defineMetadata({
   actions: [
     {
       type: 'add',
-      templateFile: resolve(__dirname, 'default.hbs'),
+      templateFile: resolve($dir(__dirname), 'default.hbs'),
       path: resolve(cwd(), '.prettierrc'),
     },
   ],

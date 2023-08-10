@@ -3,6 +3,7 @@
     "antfu",
     "consola",
     "conventionalcommits",
+    "execa",
     "fuzzypath",
     "infile",
     "mkdist",

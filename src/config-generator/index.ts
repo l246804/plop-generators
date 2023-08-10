@@ -1,4 +1,5 @@
 import { installPackage } from '@antfu/install-pkg'
+import { uniq } from 'lodash-es'
 import { getTemplateAnswers, getTemplatePrompts, getTemplateTypes } from './utils/template'
 import type { TemplateMetadata } from './types/template'
 import { ensureFunction } from '@/utils/fn'
@@ -54,8 +55,11 @@ const setup: GeneratorModule<ConfigGeneratorOptions> = (plop, options) => {
       if (autoInstall) {
         installPackage(ensureFunction(metadata.deps!)(data), {
           dev: true,
-          additionalArgs: options?.additionalArgs,
-        })
+          additionalArgs: uniq([
+            ...(metadata.additionalArgs || []),
+            ...(options?.additionalArgs || []),
+          ]),
+        }).then(() => metadata.onInstalled?.(data))
       }
 
       return ensureFunction(metadata.actions)(data) || []

@@ -16,6 +16,9 @@ export default defineConfig(() => {
         output: [genOutput('esm'), genOutput('cjs')],
       },
     },
+    define: {
+      __dirname: 'import.meta.url',
+    },
     esbuild: {
       drop: ['console', 'debugger'],
     },

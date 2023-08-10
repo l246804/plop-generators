@@ -2,6 +2,7 @@ import { resolve } from 'node:path'
 import { cwd } from 'node:process'
 import { getPackageInfoSync } from 'local-pkg'
 import { defineMetadata } from '../../utils/template'
+import { $dir } from '@/utils/path'
 
 export default defineMetadata({
   name: 'vscode',
@@ -23,15 +24,15 @@ export default defineMetadata({
     return [
       {
         type: 'add',
-        templateFile: resolve(__dirname, '{{purpose}}/settings.hbs'),
-        path: resolve(cwd(), '.vscode/settings.json'),
-        abortOnFail: false,
+        templateFile: resolve($dir(__dirname), '{{purpose}}/extensions.hbs'),
+        path: resolve(cwd(), '.vscode/extensions.json'),
         data,
+        skipIfExists: true,
       },
       {
         type: 'add',
-        templateFile: resolve(__dirname, '{{purpose}}/extensions.hbs'),
-        path: resolve(cwd(), '.vscode/extensions.json'),
+        templateFile: resolve($dir(__dirname), '{{purpose}}/settings.hbs'),
+        path: resolve(cwd(), '.vscode/settings.json'),
         data,
       },
     ]

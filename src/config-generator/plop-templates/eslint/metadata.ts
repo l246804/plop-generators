@@ -3,6 +3,7 @@ import { cwd } from 'node:process'
 import { getPackageInfoSync, isPackageExists } from 'local-pkg'
 import { defineMetadata } from '../../utils/template'
 import { isVue2 } from '@/utils/vue'
+import { $dir } from '@/utils/path'
 
 export default defineMetadata({
   name: 'eslint',
@@ -18,7 +19,7 @@ export default defineMetadata({
     return [
       {
         type: 'add',
-        templateFile: resolve(__dirname, 'default.hbs'),
+        templateFile: resolve($dir(__dirname), 'default.hbs'),
         path: resolve(cwd(), '.eslintrc.cjs'),
         data,
       },
