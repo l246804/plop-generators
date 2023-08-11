@@ -19,7 +19,7 @@ export default defineMetadata({
       type: 'confirm',
       message: 'Stylelint?',
       default: true,
-      when: (answers) => answers?.vscode?.purpose === 'frontend',
+      when: (answers) => answers?.purpose === 'frontend',
     },
   ],
   actions: (answers) => {

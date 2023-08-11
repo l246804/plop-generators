@@ -1,4 +1,5 @@
 import type { PromptQuestion } from 'node-plop'
+import { isBoolean, isFunction } from 'lodash-es'
 import type { TemplateMetadata } from '../types/template'
 
 export function defineMetadata(metaData: TemplateMetadata) {
@@ -16,7 +17,21 @@ export function getTemplatePrompts(metadata: TemplateMetadata[]) {
         (item.prompts || []).map((_item) => ({
           ..._item,
           name: `${item.name}.${_item.name}`,
-          when: (answer) => answer.type === item.name,
+          when: async (answer) => {
+            // 只有选中当前模板时才出现该问题
+            let valid = answer.type === item.name
+
+            // 如果选中当前模板且模板问题存在 `when` 时进行验证
+            if (valid && _item.when != null) {
+              valid = isBoolean(_item.when)
+                ? _item.when
+                : isFunction(_item.when)
+                  ? await _item.when(getTemplateAnswers(answer.type, answer))
+                  : valid
+            }
+
+            return valid
+          },
         })),
       ),
     [] as PromptQuestion[],

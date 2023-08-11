@@ -8,6 +8,11 @@ import type { GeneratorModule } from '@/types/generator-module'
 
 export interface ConfigGeneratorOptions {
   /**
+   * 是否自动安装依赖
+   * @default false
+   */
+  autoInstall?: boolean
+  /**
    * 自动安装依赖时的可选参数
    */
   additionalArgs?: string[]
@@ -39,19 +44,26 @@ const setup: GeneratorModule<ConfigGeneratorOptions> = (plop, options) => {
         type: 'confirm',
         default: false,
         when: (answers) => {
+          // 如果配置项里设置了该属性，则直接跳过
+          if (typeof options?.autoInstall !== 'undefined') return false
+
           const template = templates.find(({ name }) => name === answers.type)
           if (!template?.deps) return false
+
           const data = getTemplateAnswers(answers.type, answers)
           return ensureFunction(template.deps)(data).length > 0
         },
       },
     ],
     actions: (answers = {}) => {
-      const { type, autoInstall } = answers
+      const { type } = answers
       const metadata = templates.find(({ name }) => name === type)
       if (!metadata) return []
 
       const data = getTemplateAnswers(type, answers)
+      const autoInstall
+        = typeof options?.autoInstall !== 'undefined' ? options.autoInstall : answers.autoInstall
+
       if (autoInstall) {
         installPackage(ensureFunction(metadata.deps!)(data), {
           dev: true,
