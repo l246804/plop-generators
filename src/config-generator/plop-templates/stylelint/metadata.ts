@@ -36,13 +36,12 @@ export default defineMetadata({
     'postcss',
     'stylelint',
     'stylelint-config-standard',
-    'stylelint-config-html',
     'stylelint-config-recommended',
 
     data.order && 'stylelint-order',
     data.prettier && 'stylelint-config-prettier',
 
-    ...(getVueInfo() ? ['stylelint-config-recommended-vue'] : []),
+    ...(getVueInfo() ? ['stylelint-config-html', 'stylelint-config-recommended-vue'] : []),
 
     ...(data.lang !== 'css'
       ? [
