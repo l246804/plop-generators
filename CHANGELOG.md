@@ -1,5 +1,12 @@
 
 
+## [0.3.2](https://github.com/l246804/plop-generators/compare/v0.3.1...v0.3.2) (2023-08-11)
+
+
+### Features
+
+* 🎸 config-generator 新增 autoInstall 配置项 ([12c371a](https://github.com/l246804/plop-generators/commit/12c371a3d1d4aa9ad158219dd9abe2fc980c98f1))
+
 ## [0.3.1](https://github.com/l246804/plop-generators/compare/v0.3.0...v0.3.1) (2023-08-11)
 
 ## [0.3.0](https://github.com/l246804/plop-generators/compare/v0.2.0...v0.3.0) (2023-08-10)
