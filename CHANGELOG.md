@@ -1,5 +1,20 @@
 
 
+## [0.3.3](https://github.com/l246804/plop-generators/compare/v0.3.2...v0.3.3) (2023-08-15)
+
+
+### Features
+
+* 🎸 support cz-git ([3fc7cb5](https://github.com/l246804/plop-generators/commit/3fc7cb55b1e0f11fe7884b55af4fda5f6506014d))
+
+
+### Chores
+
+* 🤖 调整 stylelint 依赖项 ([5d3b734](https://github.com/l246804/plop-generators/commit/5d3b7344098e55077ffcb7d50523bbc4c15d9760))
+* 🤖 维护 vscode/frontend/settings.hbs ([700e19e](https://github.com/l246804/plop-generators/commit/700e19e341d19240a75be9a147ac5f292dba044c))
+* 🤖 change styleint default to false ([19a354d](https://github.com/l246804/plop-generators/commit/19a354d94d05033e6452b3afe95427438d6eb22d))
+* 🤖 refine tsconfig ([9a3e783](https://github.com/l246804/plop-generators/commit/9a3e783c096130f72812d949882d1abcc71de2d9))
+
 ## [0.3.2](https://github.com/l246804/plop-generators/compare/v0.3.1...v0.3.2) (2023-08-11)
 
 
