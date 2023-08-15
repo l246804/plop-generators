@@ -1,0 +1,76 @@
+function buildType(value, message, emoji) {
+  return { value, name: `${value}: ${`${emoji} ${message}`}` }
+}
+
+/**
+ * @type {import('cz-git').CommitizenGitOptions}
+ */
+module.exports = {
+  // https://cz-git.qbb.sh/zh/recipes/alias
+  alias: {
+    // aliases...
+  },
+
+  // https://cz-git.qbb.sh/zh/config/show#messages
+  messages: {
+    type: 'Select the type of change that you\'re committing:',
+    scope: 'Denote the SCOPE of this change (optional):',
+    customScope: 'Denote the SCOPE of this change:',
+    subject: 'Write a SHORT, IMPERATIVE tense description of the change:\n',
+    body: 'Provide a LONGER description of the change (optional). Use "|" to break new line:\n',
+    breaking: 'List any BREAKING CHANGES (optional). Use "|" to break new line:\n',
+    footerPrefixesSelect: 'Select the ISSUES type of changeList by this change (optional):',
+    customFooterPrefix: 'Input ISSUES prefix:',
+    footer: 'List any ISSUES by this change. E.g.: #31, #34:\n',
+    generatingByAI: 'Generating your AI commit subject...',
+    generatedSelectByAI: 'Select suitable subject by AI generated:',
+    confirmCommit: 'Are you sure you want to proceed with the commit above?',
+  },
+
+  // https://cz-git.qbb.sh/zh/config/show#types
+  types: [
+    buildType('chore', 'Build process or auxiliary tool changes', '🤖'),
+    buildType('ci', 'CI related changes', '🎡'),
+    buildType('docs', 'Documentation only changes', '✏️'),
+    buildType('feat', 'A new feature', '🎸'),
+    buildType('fix', 'A bug fix', '🐛'),
+    buildType('perf', 'A code change that improves performance', '⚡️'),
+    buildType('refactor', 'A code change that neither fixes a bug or adds a feature', '💡'),
+    buildType('release', 'Create a release commit', '🏹'),
+    buildType('style', 'Markup, white-space, formatting, missing semi-colons...', '💄'),
+    buildType('test', 'Adding missing tests', '💍'),
+    buildType('build', 'Changes that affect the build system or external dependencies', '📦️'),
+    buildType('revert', 'Reverts a previous commit', '⏪️'),
+  ],
+
+  useAI: false,
+  aiNumber: 1,
+  themeColorCode: '',
+  scopes: [],
+  allowCustomScopes: true,
+  allowEmptyScopes: true,
+  customScopesAlign: 'bottom',
+  customScopesAlias: 'custom',
+  emptyScopesAlias: 'empty',
+  upperCaseSubject: false,
+  markBreakingChangeMode: false,
+  allowBreakingChanges: ['feat', 'fix'],
+  breaklineNumber: 100,
+  breaklineChar: '|',
+  skipQuestions: [],
+  issuePrefixes: [{ value: 'closed', name: 'closed:   ISSUES has been processed' }],
+  customIssuePrefixAlign: 'top',
+  emptyIssuePrefixAlias: 'skip',
+  customIssuePrefixAlias: 'custom',
+  allowCustomIssuePrefix: true,
+  allowEmptyIssuePrefix: true,
+  confirmColorize: true,
+  maxHeaderLength: Number.POSITIVE_INFINITY,
+  maxSubjectLength: Number.POSITIVE_INFINITY,
+  minSubjectLength: 0,
+  scopeOverrides: undefined,
+  defaultBody: '',
+  defaultIssues: '',
+  defaultScope: '',
+  defaultSubject: '',
+}

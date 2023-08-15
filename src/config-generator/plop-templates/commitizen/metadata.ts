@@ -14,6 +14,7 @@ export default defineMetadata({
       message: 'Select adaptor:',
       choices: [
         { checked: true, value: 'git-cz', name: 'git-cz' },
+        { value: 'cz-git', name: 'cz-git' },
         { value: 'cz-conventional-changelog', name: 'cz-conventional-changelog' },
       ],
       default: 'git-cz',
@@ -26,17 +27,29 @@ export default defineMetadata({
         type: 'add',
         templateFile: resolve($dir(__dirname), 'adaptor.hbs'),
         path: resolve(cwd(), '.czrc'),
-        data,
-        skipIfExists: true,
+        data: {
+          ...(data || {}),
+          czGit: data?.adaptor === 'cz-git',
+          gitCz: data?.adaptor === 'git-cz',
+        },
+        force: true,
       },
     ]
-    if (data?.adaptor === 'git-cz') {
-      actions.push({
-        type: 'add',
-        templateFile: resolve($dir(__dirname), 'changelog.hbs'),
-        path: resolve(cwd(), 'changelog.config.cjs'),
-        skipIfExists: true,
-      })
+    switch (data?.adaptor) {
+      case 'git-cz':
+        actions.push({
+          type: 'add',
+          templateFile: resolve($dir(__dirname), 'changelog.hbs'),
+          path: resolve(cwd(), 'changelog.config.cjs'),
+        })
+        break
+      case 'cz-git':
+        actions.push({
+          type: 'add',
+          templateFile: resolve($dir(__dirname), 'cz.config.hbs'),
+          path: resolve(cwd(), 'cz.config.cjs'),
+        })
+        break
     }
     return actions
   },
