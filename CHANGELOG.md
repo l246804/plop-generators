@@ -1,5 +1,12 @@
 
 
+## [0.3.4](https://github.com/l246804/plop-generators/compare/v0.3.3...v0.3.4) (2023-08-15)
+
+
+### Bug fixes
+
+* 🐛 tsconfig.json error ([95c34a9](https://github.com/l246804/plop-generators/commit/95c34a978a5f9de232174bc480e9c091c7d5c88e))
+
 ## [0.3.3](https://github.com/l246804/plop-generators/compare/v0.3.2...v0.3.3) (2023-08-15)
 
 
