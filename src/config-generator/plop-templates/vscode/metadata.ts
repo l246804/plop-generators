@@ -18,7 +18,7 @@ export default defineMetadata({
       name: 'stylelint',
       type: 'confirm',
       message: 'Stylelint?',
-      default: true,
+      default: false,
       when: (answers) => answers?.purpose === 'frontend',
     },
   ],
