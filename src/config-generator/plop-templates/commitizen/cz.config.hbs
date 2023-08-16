@@ -29,18 +29,18 @@ module.exports = {
 
   // https://cz-git.qbb.sh/zh/config/show#types
   types: [
-    buildType('chore', 'Build process or auxiliary tool changes', '🤖'),
-    buildType('ci', 'CI related changes', '🎡'),
-    buildType('docs', 'Documentation only changes', '✏️'),
     buildType('feat', 'A new feature', '🎸'),
     buildType('fix', 'A bug fix', '🐛'),
-    buildType('perf', 'A code change that improves performance', '⚡️'),
+    buildType('chore', 'Build process or auxiliary tool changes', '🤖'),
+    buildType('docs', 'Documentation only changes', '✏️'),
     buildType('refactor', 'A code change that neither fixes a bug or adds a feature', '💡'),
-    buildType('release', 'Create a release commit', '🏹'),
     buildType('style', 'Markup, white-space, formatting, missing semi-colons...', '💄'),
+    buildType('perf', 'A code change that improves performance', '⚡️'),
     buildType('test', 'Adding missing tests', '💍'),
     buildType('build', 'Changes that affect the build system or external dependencies', '📦️'),
     buildType('revert', 'Reverts a previous commit', '⏪️'),
+    buildType('release', 'Create a release commit', '🏹'),
+    buildType('ci', 'CI related changes', '🎡'),
   ],
 
   useAI: false,
