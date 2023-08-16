@@ -1,5 +1,12 @@
 
 
+## [0.3.5](https://github.com/l246804/plop-generators/compare/v0.3.4...v0.3.5) (2023-08-16)
+
+
+### Chores
+
+* 🤖 调整 commitizen 配置模板 ([085cac9](https://github.com/l246804/plop-generators/commit/085cac9c5c50bca41686743912c2eb5d2ecfd3ef))
+
 ## [0.3.4](https://github.com/l246804/plop-generators/compare/v0.3.3...v0.3.4) (2023-08-15)
 
 
