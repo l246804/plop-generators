@@ -1,59 +1,11 @@
 {
-  "git": {
-    "tagName": "v${version}",
-    "commitMessage": "release: v${version}"
-  },
-  "npm": {
-    "publish": false
-  },
-  "github": {
-    "release": false
-  },
-  "hooks": {
-    "before:init": [],
-    "after:bump": "echo Successfully released ${name} v${version} to ${repo.repository}."
-  },
-  "plugins": {
-{{#if changelog}}
-    "@release-it/conventional-changelog": {
-      "infile": "CHANGELOG.md",
-      "ignoreRecommendedBump": true,
-      "strictSemVer": true,
-      "header": "# Changelog",
-      "preset": {
-        "name": "conventionalcommits",
-        "types": [
-          {
-            "type": "feat",
-            "section": "Features"
-          },
-          {
-            "type": "fix",
-            "section": "Bug Fixes"
-          },
-          {
-            "type": "chore",
-            "section": "Chores"
-          },
-          {
-            "type": "refactor",
-            "section": "Refactors"
-          },
-          {
-            "type": "docs",
-            "section": "Docs"
-          },
-          {
-            "type": "style",
-            "section": "Styles"
-          },
-          {
-            "type": "perf",
-            "section": "Performances"
-          }
-        ]
-      }
-    }
-{{/if}}
-  }
+  "$schema": "https://unpkg.com/@changesets/config@2.3.1/schema.json",
+  "changelog": "@changesets/cli/changelog",
+  "commit": true,
+  "fixed": [],
+  "linked": [],
+  "access": "public",
+  "baseBranch": "dev",
+  "updateInternalDependencies": "minor",
+  "ignore": []
 }
