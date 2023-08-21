@@ -1,5 +1,12 @@
 
 
+## [0.3.6](https://github.com/l246804/plop-generators/compare/v0.3.5...v0.3.6) (2023-08-21)
+
+
+### Chores
+
+* 🤖 优化 config-generator ([f6799c0](https://github.com/l246804/plop-generators/commit/f6799c0b8e96343b6af0d4cc74feafccf7a3a864))
+
 ## [0.3.5](https://github.com/l246804/plop-generators/compare/v0.3.4...v0.3.5) (2023-08-16)
 
 
