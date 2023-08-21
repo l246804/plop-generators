@@ -1,5 +1,13 @@
 
 
+## [0.3.7](https://github.com/l246804/plop-generators/compare/v0.3.6...v0.3.7) (2023-08-21)
+
+
+### Chores
+
+* 🤖 更改 release-it 配置模板 ([e3f4c21](https://github.com/l246804/plop-generators/commit/e3f4c21e330da75376c380a5a2f0371bed62abad))
+* 🤖 移除 changelog.hbs 重复配置项 ([4e131f7](https://github.com/l246804/plop-generators/commit/4e131f78551e435a0827771fd29b85c0f2cadc2d))
+
 ## [0.3.6](https://github.com/l246804/plop-generators/compare/v0.3.5...v0.3.6) (2023-08-21)
 
 
