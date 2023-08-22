@@ -1,5 +1,12 @@
 
 
+## [0.5.3](https://github.com/l246804/plop-generators/compare/v0.5.2...v0.5.3) (2023-08-22)
+
+
+### Chores
+
+* 🤖 package.json 模板增加依赖 ([63f7d75](https://github.com/l246804/plop-generators/commit/63f7d756495d2b71f67999f238f73f6d17cf166f))
+
 ## [0.5.2](https://github.com/l246804/plop-generators/compare/v0.5.1...v0.5.2) (2023-08-22)
 
 
