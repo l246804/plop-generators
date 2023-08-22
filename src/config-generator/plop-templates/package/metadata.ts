@@ -44,9 +44,20 @@ export default defineMetadata({
       name: 'description',
       message: 'Package description:',
     },
+    {
+      type: 'list',
+      name: 'releaseTool',
+      message: 'Select release tool:',
+      choices: [
+        { checked: true, name: 'ReleaseIt', value: 'releaseIt' },
+        { name: 'Changesets', value: 'changesets' },
+      ],
+      default: 'releaseIt',
+    },
   ],
   actions: (data) => {
     data!.year = new Date().getFullYear()
+    data![data!.releaseTool] = true
 
     return [
       {

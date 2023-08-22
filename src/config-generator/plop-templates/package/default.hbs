@@ -38,9 +38,21 @@
     "node": ">=14"
   },
   "scripts": {
+    {{#if releaseIt}}
+    "release": "release-it",
+    {{/if}}
+    {{#if changesets}}
+    "change": "changeset",
+    "change:version": "changeset version",
+    "change:publish": "changeset publish",
+    "release": "run-s change:version change:publish",
+    {{/if}}
     "plop": "plop"
   },
   "devDependencies": {
+    {{#if changesets}}
+    "npm-run-all": "latest",
+    {{/if}}
     "plop": "latest"
   }
 }
