@@ -1,5 +1,12 @@
 
 
+## [0.4.0](https://github.com/l246804/plop-generators/compare/v0.3.7...v0.4.0) (2023-08-22)
+
+
+### Features
+
+* 🎸 eslint 支持 prettier 可选配置 ([47bb722](https://github.com/l246804/plop-generators/commit/47bb72226d01177fdfdd8aa6eaab4724a2817ef8))
+
 ## [0.3.7](https://github.com/l246804/plop-generators/compare/v0.3.6...v0.3.7) (2023-08-21)
 
 
