@@ -15,12 +15,6 @@ export default defineMetadata({
       default: true,
     },
     {
-      type: 'confirm',
-      name: 'prettier',
-      message: 'Prettier?',
-      default: true,
-    },
-    {
       type: 'list',
       name: 'lang',
       message: 'Select style lang:',
@@ -39,7 +33,6 @@ export default defineMetadata({
     'stylelint-config-recommended',
 
     data.order && 'stylelint-order',
-    data.prettier && 'stylelint-config-prettier',
 
     ...(getVueInfo() ? ['stylelint-config-html', 'stylelint-config-recommended-vue'] : []),
 
@@ -55,7 +48,6 @@ export default defineMetadata({
     const data = {
       vue: !!getVueInfo(),
       order: !!answer?.order,
-      prettier: !!answer?.prettier,
       less: answer?.lang === 'less',
       scss: answer?.lang === 'scss',
     }

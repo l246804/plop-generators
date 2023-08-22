@@ -12,9 +12,6 @@ module.exports = {
 {{else if less}}
     'stylelint-config-recommended-less',
 {{/if}}
-{{#if prettier}}
-    'stylelint-config-prettier',
-{{/if}}
   ],
 {{#if order}}
   plugins: ['stylelint-order'],
@@ -35,24 +32,18 @@ module.exports = {
   ],
   ignoreFiles: ['**/*.js', '**/*.jsx', '**/*.tsx', '**/*.ts', '**/*.json', '**/*.yaml', '**/*.md'],
   rules: {
-    indentation: 2,
     'selector-pseudo-element-no-unknown': [
       true,
       {
         ignorePseudoElements: ['v-deep', 'v-bind', ':deep', ':global', ':slotted'],
       },
     ],
-    'number-leading-zero': 'always',
     'no-descending-specificity': null,
     'function-url-quotes': 'always',
-    'string-quotes': 'single',
-    'unit-case': null,
-    'color-hex-case': 'lower',
     'color-hex-length': 'long',
     'rule-empty-line-before': 'never',
     'font-family-no-missing-generic-family-keyword': null,
     'selector-type-no-unknown': null,
-    'block-opening-brace-space-before': 'always',
     'at-rule-no-unknown': null,
     'no-duplicate-selectors': null,
     'property-no-unknown': null,
