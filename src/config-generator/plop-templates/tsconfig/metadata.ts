@@ -5,7 +5,7 @@ import { $dir } from '@/utils/path'
 
 export default defineMetadata({
   name: 'tsconfig',
-  description: 'Simple configuration of typescript.',
+  description: 'Typescript configuration.',
   deps: (answers) => ['typescript', answers.node && '@types/node'],
   prompts: [
     {
