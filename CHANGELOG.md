@@ -1,5 +1,12 @@
 
 
+## [0.5.4](https://github.com/l246804/plop-generators/compare/v0.5.3...v0.5.4) (2023-08-22)
+
+
+### Chores
+
+* 🤖 移除 stylelint 弃用规则校验 ([8e8253e](https://github.com/l246804/plop-generators/commit/8e8253eac3f7d2b6342645ff86c9a949cda6c41f))
+
 ## [0.5.3](https://github.com/l246804/plop-generators/compare/v0.5.2...v0.5.3) (2023-08-22)
 
 
