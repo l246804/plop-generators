@@ -7,7 +7,6 @@ import { requiredValidator } from '@/utils/prompt'
 export default defineMetadata({
   name: 'package',
   description: 'Package configuration.',
-  deps: ['plop'],
   prompts: [
     {
       type: 'input',
@@ -47,6 +46,8 @@ export default defineMetadata({
     },
   ],
   actions: (data) => {
+    data!.year = new Date().getFullYear()
+
     return [
       {
         type: 'add',
@@ -54,6 +55,13 @@ export default defineMetadata({
         path: resolve(cwd(), 'package.json'),
         data,
         force: true,
+      },
+      {
+        type: 'add',
+        templateFile: resolve($dir(__dirname), 'license.hbs'),
+        path: resolve(cwd(), 'LICENSE'),
+        data,
+        skipIfExists: true,
       },
     ]
   },
