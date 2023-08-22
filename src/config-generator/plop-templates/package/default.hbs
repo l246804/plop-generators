@@ -1,0 +1,46 @@
+{
+  "name": "{{#if scope}}@{{scopeName}}/{{/if}}{{name}}",
+  "type": "module",
+  "version": "0.0.0",
+{{#if description}}
+  "description": "{{description}}",
+{{/if}}
+  "author": "{{username}} <https://github.com/{{account}}>",
+  "license": "MIT",
+  "homepage": "https://github.com/{{account}}/{{name}}",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/{{account}}/{{name}}"
+  },
+  "bugs": {
+    "url": "https://github.com/{{account}}/{{name}}/issues"
+  },
+  "keywords": [],
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    },
+    "./*": "./*"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=14"
+  },
+  "scripts": {
+    "plop": "plop"
+  },
+  "devDependencies": {
+    "plop": "latest"
+  }
+}
