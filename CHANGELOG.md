@@ -1,5 +1,13 @@
 
 
+## [0.5.1](https://github.com/l246804/plop-generators/compare/v0.5.0...v0.5.1) (2023-08-22)
+
+
+### Chores
+
+* 🤖 优化 git-cz ([ce2fdf3](https://github.com/l246804/plop-generators/commit/ce2fdf36c6afba94988f3b6242b1a9338b12da3d))
+* 🤖 优化 package.json 模板 ([dccb1ef](https://github.com/l246804/plop-generators/commit/dccb1ef972ab88f309a42957a464800766f293f2))
+
 ## [0.5.0](https://github.com/l246804/plop-generators/compare/v0.4.0...v0.5.0) (2023-08-22)
 
 
