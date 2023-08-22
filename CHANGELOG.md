@@ -1,5 +1,19 @@
 
 
+## [0.5.0](https://github.com/l246804/plop-generators/compare/v0.4.0...v0.5.0) (2023-08-22)
+
+
+### Features
+
+* 🎸 新增 package.json 配置 ([87fd23d](https://github.com/l246804/plop-generators/commit/87fd23d17921e27336c1c1dfbfa2e8b0d8d5b046))
+* 🎸 新增 unbuild 配置模板 ([bb23a9c](https://github.com/l246804/plop-generators/commit/bb23a9c9cd3b7e0c3f8bd0eebdf6592a08b8f10a))
+* 🎸 typescript 支持选择 node 环境 ([c3b7fc7](https://github.com/l246804/plop-generators/commit/c3b7fc746c1c742759f0ea5b47c4758ce9909198))
+
+
+### Chores
+
+* 🤖 更改 tsconfig 描述 ([d403dad](https://github.com/l246804/plop-generators/commit/d403dad4b20b77267c806fa8dda4fac37ff29b68))
+
 ## [0.4.0](https://github.com/l246804/plop-generators/compare/v0.3.7...v0.4.0) (2023-08-22)
 
 
