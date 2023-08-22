@@ -3,6 +3,9 @@
     "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "Bundler",
+{{#if node}}
+    "types": ["node"],
+{{/if}}
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "strict": true,
     "esModuleInterop": true,
