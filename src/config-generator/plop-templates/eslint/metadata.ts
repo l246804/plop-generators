@@ -9,12 +9,21 @@ export default defineMetadata({
   name: 'eslint',
   description: 'ESLint configuration.',
   deps: ['eslint', 'eslint-define-config', '@antfu/eslint-config'],
-  actions: () => {
+  prompts: [
+    {
+      type: 'confirm',
+      name: 'prettier',
+      message: 'Prettier?',
+      default: true,
+    },
+  ],
+  actions: (answers) => {
     const vueInfo = getVueInfo()
     const data = {
       hasVue: !!vueInfo,
       isVue2: isVue2(vueInfo?.version),
       hasTS: isPackageExists('typescript'),
+      ...answers,
     }
     return [
       {
