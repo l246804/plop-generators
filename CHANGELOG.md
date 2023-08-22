@@ -1,5 +1,12 @@
 
 
+## [0.5.2](https://github.com/l246804/plop-generators/compare/v0.5.1...v0.5.2) (2023-08-22)
+
+
+### Chores
+
+* 🤖 优化 package.json 配置 ([122b480](https://github.com/l246804/plop-generators/commit/122b4800568d8f81ca252d02b6fac3f013335e20))
+
 ## [0.5.1](https://github.com/l246804/plop-generators/compare/v0.5.0...v0.5.1) (2023-08-22)
 
 
