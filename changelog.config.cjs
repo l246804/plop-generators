@@ -1,7 +1,20 @@
 module.exports = {
   disableEmoji: false,
   format: '{type}{scope}: {emoji}{subject}',
-  list: ['test', 'feat', 'fix', 'chore', 'docs', 'refactor', 'style', 'ci', 'perf'],
+  list: [
+    'feat',
+    'fix',
+    'chore',
+    'docs',
+    'refactor',
+    'style',
+    'perf',
+    'test',
+    'build',
+    'revert',
+    'release',
+    'ci',
+  ],
   maxMessageLength: 64,
   minMessageLength: 3,
   questions: ['type', 'scope', 'subject', 'body', 'breaking', 'issues', 'lerna'],
@@ -42,11 +55,6 @@ module.exports = {
       emoji: '💡',
       value: 'refactor',
     },
-    release: {
-      description: 'Create a release commit',
-      emoji: '🏹',
-      value: 'release',
-    },
     style: {
       description: 'Markup, white-space, formatting, missing semi-colons...',
       emoji: '💄',
@@ -56,6 +64,21 @@ module.exports = {
       description: 'Adding missing tests',
       emoji: '💍',
       value: 'test',
+    },
+    build: {
+      description: 'Changes that affect the build system or external dependencies',
+      emoji: '📦️',
+      value: 'build',
+    },
+    revert: {
+      description: 'Reverts a previous commit',
+      emoji: '⏪️',
+      value: 'revert',
+    },
+    release: {
+      description: 'Create a release commit',
+      emoji: '🏹',
+      value: 'release',
     },
     messages: {
       type: 'Select the type of change that you\'re committing:',
