@@ -1,5 +1,12 @@
 
 
+## [0.6.1](https://github.com/l246804/plop-generators/compare/v0.6.0...v0.6.1) (2023-08-23)
+
+
+### Chores
+
+* 🤖 更新 stylelint 模板配置 ([f0bc848](https://github.com/l246804/plop-generators/commit/f0bc8481eb6f67f51a0a9808ebdd67483b219263))
+
 ## [0.6.0](https://github.com/l246804/plop-generators/compare/v0.5.4...v0.6.0) (2023-08-23)
 
 
