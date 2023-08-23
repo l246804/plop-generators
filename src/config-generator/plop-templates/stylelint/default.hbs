@@ -1,35 +1,18 @@
 module.exports = {
   extends: [
     'stylelint-config-standard',
-{{#if vue}}
-    'stylelint-config-html/vue',
-{{/if}}
 {{#if scss}}
-    'stylelint-config-recommended-scss',
-  {{#if vue}}
-    'stylelint-config-recommended-vue/scss',
-  {{/if}}
+    'stylelint-config-standard-scss',
 {{else if less}}
-    'stylelint-config-recommended-less',
+    'stylelint-config-standard-less',
+{{/if}}
+{{#if vue}}
+    'stylelint-config-standard-vue{{#if scss}}/scss{{/if}}'
 {{/if}}
   ],
 {{#if order}}
   plugins: ['stylelint-order'],
 {{/if}}
-  overrides: [
-{{#if less}}
-    {
-      files: ['**/*.(less|css|vue|html)'],
-      customSyntax: 'postcss-less',
-    },
-{{/if}}
-{{#if scss}}
-    {
-      files: ['**/*.(scss|css|vue|html)'],
-      customSyntax: 'postcss-scss',
-    },
-{{/if}}
-  ],
   ignoreFiles: ['**/*.js', '**/*.jsx', '**/*.tsx', '**/*.ts', '**/*.json', '**/*.yaml', '**/*.md'],
   rules: {
     'selector-pseudo-element-no-unknown': [
