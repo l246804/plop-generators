@@ -22,32 +22,26 @@ export default defineMetadata({
   ],
   deps: (answers) => ['commitizen', answers.adaptor],
   actions: (data) => {
+    data.czGit = data.adaptor === 'cz-git'
+    data.gitCz = data.adaptor === 'git-cz'
+
     const actions: Actions = [
       {
         type: 'add',
         templateFile: resolve($dir(__dirname), 'adaptor.hbs'),
         path: resolve(cwd(), '.czrc'),
-        data: {
-          ...(data || {}),
-          czGit: data?.adaptor === 'cz-git',
-          gitCz: data?.adaptor === 'git-cz',
-        },
+        data,
         force: true,
       },
     ]
-    switch (data?.adaptor) {
+    switch (data.adaptor) {
       case 'git-cz':
-        actions.push({
-          type: 'add',
-          templateFile: resolve($dir(__dirname), 'changelog.hbs'),
-          path: resolve(cwd(), 'changelog.config.cjs'),
-        })
-        break
       case 'cz-git':
         actions.push({
           type: 'add',
-          templateFile: resolve($dir(__dirname), 'cz.config.hbs'),
+          templateFile: resolve($dir(__dirname), '{{adaptor}}.hbs'),
           path: resolve(cwd(), 'cz.config.cjs'),
+          data,
         })
         break
     }

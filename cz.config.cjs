@@ -15,7 +15,7 @@ module.exports = {
     'release',
     'ci',
   ],
-  maxMessageLength: 64,
+  maxMessageLength: 72,
   minMessageLength: 3,
   questions: ['type', 'scope', 'subject', 'body', 'breaking', 'issues', 'lerna'],
   scopes: [],
