@@ -9,14 +9,6 @@ export default defineMetadata({
   name: 'eslint',
   description: 'ESLint configuration.',
   deps: ['eslint', 'eslint-define-config', '@antfu/eslint-config'],
-  prompts: [
-    {
-      type: 'confirm',
-      name: 'prettier',
-      message: 'Prettier?',
-      default: true,
-    },
-  ],
   actions: (answers) => {
     const vueInfo = getVueInfo()
     const data = {

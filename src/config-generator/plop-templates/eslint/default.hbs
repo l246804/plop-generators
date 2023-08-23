@@ -12,9 +12,6 @@ module.exports = defineConfig({
     'quote-props': ['error', 'as-needed'],
     'object-shorthand': ['off'],
     'space-before-blocks': 'error',
-{{#if prettier}}
-    'operator-linebreak': 'off', // prettier 冲突
-{{/if}}
 
     // antfu
     'antfu/if-newline': 'off',
@@ -29,9 +26,6 @@ module.exports = defineConfig({
       { registeredComponentsOnly: false },
     ],
     'vue/max-attributes-per-line': ['error', { singleline: 1 }],
-    {{#if prettier}}
-    'vue/singleline-html-element-content-newline': ['off'], // prettier 冲突
-    {{/if}}
     {{#if isVue2}}
 
     // vue2
@@ -66,9 +60,6 @@ module.exports = defineConfig({
 
     // ts
     '@typescript-eslint/ban-ts-comment': 'off',
-    {{#if prettier}}
-    '@typescript-eslint/brace-style': 'off', // prettier 冲突
-    {{/if}}
   },
 {{/if}}
 })
