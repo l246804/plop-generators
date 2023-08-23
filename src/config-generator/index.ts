@@ -47,8 +47,8 @@ const setup: GeneratorModule<ConfigGeneratorOptions> = (plop, options) => {
           // 如果配置项里设置了该属性，则直接跳过
           if (typeof options?.autoInstall !== 'undefined') return false
 
-          const template = templates.find(({ name }) => name === answers.type)
-          if (!template?.deps) return false
+          const template = templates.find(({ name }) => name === answers.type)!
+          if (!template.deps) return false
 
           const data = getTemplateAnswers(answers.type, answers)
           return ensureFunction(template.deps)(data).length > 0

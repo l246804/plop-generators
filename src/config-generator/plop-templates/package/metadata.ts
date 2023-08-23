@@ -56,8 +56,8 @@ export default defineMetadata({
     },
   ],
   actions: (data) => {
-    data!.year = new Date().getFullYear()
-    data![data!.releaseTool] = true
+    data.year = new Date().getFullYear()
+    data[data.releaseTool] = true
 
     return [
       {

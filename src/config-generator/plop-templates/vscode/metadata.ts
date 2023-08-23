@@ -19,14 +19,14 @@ export default defineMetadata({
       type: 'confirm',
       message: 'Stylelint?',
       default: false,
-      when: (answers) => answers?.purpose === 'frontend',
+      when: (answers) => answers.purpose === 'frontend',
     },
   ],
   actions: (answers) => {
     const data = {
       ...answers,
       vue: !!getVueInfo(),
-      stylelint: !!answers?.stylelint,
+      stylelint: !!answers.stylelint,
     }
     return [
       {

@@ -47,9 +47,9 @@ export default defineMetadata({
   actions: (answer) => {
     const data = {
       vue: !!getVueInfo(),
-      order: !!answer?.order,
-      less: answer?.lang === 'less',
-      scss: answer?.lang === 'scss',
+      order: !!answer.order,
+      less: answer.lang === 'less',
+      scss: answer.lang === 'scss',
     }
     return [
       {

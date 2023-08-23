@@ -1,5 +1,5 @@
-import type { Actions, PromptQuestion } from 'node-plop'
-import type { Fn } from '@/types/utils'
+import type { ActionType, PromptQuestion } from 'node-plop'
+import type { Fn, Recordable } from '@/types/utils'
 
 export interface TemplateMetadata {
   name: string
@@ -7,7 +7,7 @@ export interface TemplateMetadata {
   deps?: string[] | Fn<[any], string[]>
   additionalArgs?: string[]
   prompts?: PromptQuestion[]
-  actions?: Actions
+  actions?: ((data: Recordable) => ActionType[]) | ActionType[]
 
   onInstalled?: Fn<[any]>
 }
