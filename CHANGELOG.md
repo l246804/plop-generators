@@ -1,5 +1,22 @@
 
 
+## [0.6.0](https://github.com/l246804/plop-generators/compare/v0.5.4...v0.6.0) (2023-08-23)
+
+
+### Features
+
+* 🎸 新增 commitlint 配置模板，协同 commitizen 配置 ([897e2c5](https://github.com/l246804/plop-generators/commit/897e2c5e493ebd8bb9d16c6a91082bca74754df4))
+
+
+### Chores
+
+* 🤖 更改 eslint、prettier、vscode 协同配置 ([248d443](https://github.com/l246804/plop-generators/commit/248d443cfd42c02b6252fc71c27b194385f64ef0))
+
+
+### Styles
+
+* 💄 优化代码格式 ([6ee11d5](https://github.com/l246804/plop-generators/commit/6ee11d5ae4b886a0b1c10d8dba3a917dc4ec965d))
+
 ## [0.5.4](https://github.com/l246804/plop-generators/compare/v0.5.3...v0.5.4) (2023-08-22)
 
 
