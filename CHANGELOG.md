@@ -1,5 +1,12 @@
 
 
+## [0.6.2](https://github.com/l246804/plop-generators/compare/v0.6.1...v0.6.2) (2023-08-25)
+
+
+### Chores
+
+* 🤖 优化 vue、stylelint 相关配置模板 ([913181b](https://github.com/l246804/plop-generators/commit/913181ba3bac49c7e58df3a5f1140bd8e56a88c2))
+
 ## [0.6.1](https://github.com/l246804/plop-generators/compare/v0.6.0...v0.6.1) (2023-08-23)
 
 
