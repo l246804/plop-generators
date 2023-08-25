@@ -1,8 +1,8 @@
 import { resolve } from 'node:path'
 import { cwd } from 'node:process'
+import { isPackageExists } from 'local-pkg'
 import { defineMetadata } from '../../utils/template'
 import { $dir } from '@/utils/path'
-import { getVueInfo } from '@/utils/vue'
 
 export default defineMetadata({
   name: 'stylelint',
@@ -25,6 +25,13 @@ export default defineMetadata({
       ],
       default: 'css',
     },
+    {
+      type: 'confirm',
+      name: 'vue',
+      message: 'Vue?',
+      default: false,
+      when: () => !isPackageExists('vue'),
+    },
   ],
   deps: (data) => [
     'postcss',
@@ -32,7 +39,7 @@ export default defineMetadata({
     'stylelint-config-recommended',
     'stylelint-config-standard',
 
-    data.order && 'stylelint-order',
+    ...(data.order ? ['stylelint-order', 'stylelint-config-property-sort-order-smacss'] : []),
 
     ...(data.lang !== 'css'
       ? [
@@ -42,17 +49,12 @@ export default defineMetadata({
         ]
       : []),
 
-    ...(getVueInfo()
+    ...(data.vue
       ? ['postcss-html', 'stylelint-config-recommended-vue', 'stylelint-config-standard-vue']
       : []),
   ],
-  actions: (answer) => {
-    const data = {
-      vue: !!getVueInfo(),
-      order: !!answer.order,
-      less: answer.lang === 'less',
-      scss: answer.lang === 'scss',
-    }
+  actions: (data) => {
+    data[data.lang] = true
     return [
       {
         type: 'add',

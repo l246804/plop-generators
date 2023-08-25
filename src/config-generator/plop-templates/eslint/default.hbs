@@ -16,7 +16,7 @@ module.exports = defineConfig({
     // antfu
     'antfu/if-newline': 'off',
     'antfu/generic-spacing': 'off', // ts 泛型换行
-{{#if hasVue}}
+{{#if vue}}
 
     // vue
     'vue/no-setup-props-destructure': 'error',
@@ -26,7 +26,7 @@ module.exports = defineConfig({
       { registeredComponentsOnly: false },
     ],
     'vue/max-attributes-per-line': ['error', { singleline: 1 }],
-    {{#if isVue2}}
+    {{#if vue2}}
 
     // vue2
     'vue/no-deprecated-destroyed-lifecycle': ['off'],
@@ -56,7 +56,7 @@ module.exports = defineConfig({
     'vue/valid-v-bind-sync': ['error'],
     {{/if}}
 {{/if}}
-{{#if hasTS}}
+{{#if ts}}
 
     // ts
     '@typescript-eslint/ban-ts-comment': 'off',

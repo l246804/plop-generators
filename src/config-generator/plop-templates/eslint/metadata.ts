@@ -2,21 +2,36 @@ import { resolve } from 'node:path'
 import { cwd } from 'node:process'
 import { isPackageExists } from 'local-pkg'
 import { defineMetadata } from '../../utils/template'
-import { getVueInfo, isVue2 } from '@/utils/vue'
+import { isVue2 } from '@/utils/pkg'
 import { $dir } from '@/utils/path'
 
 export default defineMetadata({
   name: 'eslint',
   description: 'ESLint configuration.',
-  deps: ['eslint', 'eslint-define-config', '@antfu/eslint-config'],
-  actions: (answers) => {
-    const vueInfo = getVueInfo()
-    const data = {
-      hasVue: !!vueInfo,
-      isVue2: isVue2(vueInfo?.version),
-      hasTS: isPackageExists('typescript'),
-      ...answers,
-    }
+  deps: (answers) => [
+    'eslint',
+    'eslint-define-config',
+    '@antfu/eslint-config',
+    answers.ts && 'typescript',
+  ],
+  prompts: [
+    {
+      name: 'ts',
+      type: 'confirm',
+      message: 'Typescript?',
+      default: true,
+      when: () => !isPackageExists('typescript'),
+    },
+    {
+      name: 'vue',
+      type: 'confirm',
+      message: 'Vue?',
+      default: false,
+      when: () => !isPackageExists('vue'),
+    },
+  ],
+  actions: (data) => {
+    data.vue2 = isVue2()
     return [
       {
         type: 'add',
