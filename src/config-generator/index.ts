@@ -61,9 +61,10 @@ const setup: GeneratorModule<ConfigGeneratorOptions> = (plop, options) => {
       if (!metadata) return []
 
       const data = getTemplateAnswers(type, answers)
+      metadata.processAnswer?.(data)
+
       const autoInstall
         = typeof options?.autoInstall !== 'undefined' ? options.autoInstall : answers.autoInstall
-
       if (autoInstall) {
         installPackage(ensureFunction(metadata.deps!)(data), {
           dev: true,

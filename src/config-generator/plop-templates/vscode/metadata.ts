@@ -29,6 +29,10 @@ export default defineMetadata({
       when: (answers) => answers.purpose === 'frontend' && !isPackageExists('stylelint'),
     },
   ],
+  processAnswer: (data) => {
+    data.vue ??= true
+    data.stylelint ??= true
+  },
   actions: (answers) => {
     const data = {
       ...answers,

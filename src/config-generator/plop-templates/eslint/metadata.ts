@@ -30,6 +30,10 @@ export default defineMetadata({
       when: () => !isPackageExists('vue'),
     },
   ],
+  processAnswer: (data) => {
+    data.ts ??= true
+    data.vue ??= true
+  },
   actions: (data) => {
     data.vue2 = isVue2()
     return [

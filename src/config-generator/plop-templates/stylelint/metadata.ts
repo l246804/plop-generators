@@ -33,6 +33,9 @@ export default defineMetadata({
       when: () => !isPackageExists('vue'),
     },
   ],
+  processAnswer: (data) => {
+    data.vue ??= true
+  },
   deps: (data) => [
     'postcss',
     'stylelint',

@@ -8,6 +8,7 @@ export interface TemplateMetadata {
   additionalArgs?: string[]
   prompts?: PromptQuestion[]
   actions?: ((data: Recordable) => ActionType[]) | ActionType[]
+  processAnswer?: (data: Recordable) => void
 
   onInstalled?: Fn<[any]>
 }
