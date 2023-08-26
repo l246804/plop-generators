@@ -1,5 +1,12 @@
 
 
+## [0.6.3](https://github.com/l246804/plop-generators/compare/v0.6.2...v0.6.3) (2023-08-26)
+
+
+### Bug fixes
+
+* 🐛 修复部分问题跳过后缺失默认值 ([d2b4a70](https://github.com/l246804/plop-generators/commit/d2b4a70e38ed8d98ed3e58b9c28be919e0d0eea1))
+
 ## [0.6.2](https://github.com/l246804/plop-generators/compare/v0.6.1...v0.6.2) (2023-08-25)
 
 
