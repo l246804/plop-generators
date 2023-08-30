@@ -12,7 +12,7 @@ export default defineMetadata({
       name: 'node',
       type: 'confirm',
       message: 'Node?',
-      default: true,
+      default: false,
     },
   ],
   actions: (data) => [
