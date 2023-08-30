@@ -55,10 +55,12 @@ export default defineMetadata({
       default: 'releaseIt',
     },
   ],
-  actions: (data) => {
+  processAnswer: (data) => {
     data.year = new Date().getFullYear()
     data[data.releaseTool] = true
-
+  },
+  deps: (data) => [data.releaseIt && 'release-it', data.changesets && '@changesets/cli'],
+  actions: (data) => {
     return [
       {
         type: 'add',
@@ -71,6 +73,13 @@ export default defineMetadata({
         type: 'add',
         templateFile: resolve($dir(__dirname), 'license.hbs'),
         path: resolve(cwd(), 'LICENSE'),
+        data,
+        skipIfExists: true,
+      },
+      {
+        type: 'add',
+        templateFile: resolve($dir(__dirname), 'gitignore.hbs'),
+        path: resolve(cwd(), '.gitignore'),
         data,
         skipIfExists: true,
       },
