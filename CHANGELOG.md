@@ -1,5 +1,12 @@
 
 
+## [0.7.1](https://github.com/l246804/plop-generators/compare/v0.7.0...v0.7.1) (2023-08-30)
+
+
+### Chores
+
+* 🤖 更改 tsconfig node 默认值 ([92ce7df](https://github.com/l246804/plop-generators/commit/92ce7df4079bd906e751be107b30c677a94425a0))
+
 ## [0.7.0](https://github.com/l246804/plop-generators/compare/v0.6.3...v0.7.0) (2023-08-30)
 
 
