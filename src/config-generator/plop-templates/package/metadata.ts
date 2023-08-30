@@ -45,6 +45,18 @@ export default defineMetadata({
       message: 'Package description:',
     },
     {
+      type: 'confirm',
+      name: 'build',
+      message: 'Needs to build?',
+      default: true,
+    },
+    {
+      type: 'confirm',
+      name: 'commitizen',
+      message: 'Commitizen?',
+      default: true,
+    },
+    {
       type: 'list',
       name: 'releaseTool',
       message: 'Select release tool:',
