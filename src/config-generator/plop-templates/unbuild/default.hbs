@@ -1,7 +1,21 @@
+{{#if mkdist}}
+import type { BuildEntry } from 'unbuild'
+{{/if}}
 import { defineBuildConfig } from 'unbuild'
 
+{{#if mkdist}}
+function createEntry(format: 'esm' | 'cjs') {
+  return {
+    input: 'src',
+    builder: 'mkdist',
+    format,
+    ext: format === 'esm' ? 'mjs' : 'cjs',
+  } as BuildEntry
+}
+
+{{/if}}
 export default defineBuildConfig({
-  entries: ['src/index'],
+  entries: [{{#if rollup}}'src/index'{{else}}createEntry('esm'), createEntry('cjs'){{/if}}],
   clean: true,
   declaration: true,
   failOnWarn: false,
