@@ -39,7 +39,6 @@ export default defineMetadata({
   deps: (data) => [
     'postcss',
     'stylelint',
-    'stylelint-config-recommended',
     'stylelint-config-standard',
 
     ...(data.order ? ['stylelint-order', 'stylelint-config-property-sort-order-smacss'] : []),
@@ -47,13 +46,12 @@ export default defineMetadata({
     ...(data.lang !== 'css'
       ? [
           `postcss-${data.lang}`,
-          `stylelint-config-recommended-${data.lang}`,
           `stylelint-config-standard-${data.lang}`,
         ]
       : []),
 
     ...(data.vue
-      ? ['postcss-html', 'stylelint-config-recommended-vue', 'stylelint-config-standard-vue']
+      ? ['postcss-html', 'stylelint-config-standard-vue']
       : []),
   ],
   actions: (data) => {
