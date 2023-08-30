@@ -1,5 +1,29 @@
 
 
+## [0.7.0](https://github.com/l246804/plop-generators/compare/v0.6.3...v0.7.0) (2023-08-30)
+
+
+### Features
+
+* 🎸 package 模板新增 gitignore ([931f26e](https://github.com/l246804/plop-generators/commit/931f26e8162b3d85a3dcb897ce40f3aa69cf5f06))
+* 🎸 package 配置模板新增 build 和 commitizen 处理 ([b98e130](https://github.com/l246804/plop-generators/commit/b98e1308d5f8ecb848fc1fd624cc60647e52162f))
+* 🎸 release-it 配置模板新增 build 处理 ([8e8c594](https://github.com/l246804/plop-generators/commit/8e8c594564b09debc48f4f173549f457a3a52cca))
+
+
+### Bug fixes
+
+* 🐛 修复 commitizen 为 git-cz 时配置无效 ([8241e83](https://github.com/l246804/plop-generators/commit/8241e83487cbeced7f871aad2885db2fb682afcb))
+
+
+### Chores
+
+* 🤖 更新 commitizen 配置 ([490cb76](https://github.com/l246804/plop-generators/commit/490cb7694418932fccd8554287af93ea4467fc2e))
+* 🤖 减轻 stylelint 配置依赖 ([9c1a2d6](https://github.com/l246804/plop-generators/commit/9c1a2d63eac3a1834c820848d431bde808a9de2d))
+* 🤖 优化 eslint 配置模板 ([7fe9fcb](https://github.com/l246804/plop-generators/commit/7fe9fcb8621381862b137532a0d6013feb608599))
+* 🤖 优化 tsconfig 配置模板 ([b758289](https://github.com/l246804/plop-generators/commit/b7582895063c82ccff0fed04ac7a05d423be8c09))
+* 🤖 优化 unbuild 配置模板 ([d72c7f1](https://github.com/l246804/plop-generators/commit/d72c7f1e1085ddf2bcea549260bd97daf2f8738b))
+* 🤖 优化 vscode setting 配置模板 ([202a002](https://github.com/l246804/plop-generators/commit/202a0027cae0f7b103b4566ce8acb624a3993fb6))
+
 ## [0.6.3](https://github.com/l246804/plop-generators/compare/v0.6.2...v0.6.3) (2023-08-26)
 
 
