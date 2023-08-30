@@ -81,7 +81,8 @@ module.exports = {
       value: 'release',
     },
     messages: {
-      type: 'Select the type of change that you\'re committing:',
+      // eslint-disable-next-line @typescript-eslint/quotes
+      type: "Select the type of change that you're committing:",
       customScope: 'Select the scope this component affects:',
       subject: 'Write a short, imperative mood description of the change:\n',
       body: 'Provide a longer description of the change:\n ',
