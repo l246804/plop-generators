@@ -13,6 +13,12 @@ export default defineMetadata({
       message: 'Changelog?',
       default: true,
     },
+    {
+      type: 'confirm',
+      name: 'build',
+      message: 'Needs to build?',
+      default: true,
+    },
   ],
   deps: (answers) => [
     'release-it',
