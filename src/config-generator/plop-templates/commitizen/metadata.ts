@@ -45,6 +45,15 @@ export default defineMetadata({
         })
         break
     }
+    // git-cz 必须通过 changelog.config.cjs 才可自定义配置
+    if (data.gitCz) {
+      actions.push({
+        type: 'add',
+        templateFile: resolve($dir(__dirname), 'changelog.hbs'),
+        path: resolve(cwd(), 'changelog.config.cjs'),
+        data,
+      })
+    }
     return actions
   },
 })
