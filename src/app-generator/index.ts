@@ -157,7 +157,7 @@ const setup: GeneratorModule<AppGeneratorOptions> = (plop, options) => {
         },
       },
     ],
-    actions: (answers = {}) => {
+    actions: () => {
       if (!manifest) return []
 
       const { removeFiles = [], dependencies = [], devDependencies = [] } = manifest
@@ -184,7 +184,7 @@ const setup: GeneratorModule<AppGeneratorOptions> = (plop, options) => {
           templateFile: resolve($dir(__dirname), 'package.hbs'),
           path: resolve(cwd(), 'package.json'),
           force: true,
-          data: answers,
+          data: manifest,
         },
       ]
     },
