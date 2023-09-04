@@ -1,5 +1,12 @@
 
 
+## [0.8.0](https://github.com/l246804/plop-generators/compare/v0.7.1...v0.8.0) (2023-09-04)
+
+
+### Features
+
+* 🎸 add app-generator ([1f699a2](https://github.com/l246804/plop-generators/commit/1f699a276aa4444646c30e03325712e57150282e))
+
 ## [0.7.1](https://github.com/l246804/plop-generators/compare/v0.7.0...v0.7.1) (2023-08-30)
 
 
