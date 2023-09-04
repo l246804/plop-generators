@@ -1,5 +1,12 @@
 
 
+## [0.8.1](https://github.com/l246804/plop-generators/compare/v0.8.0...v0.8.1) (2023-09-04)
+
+
+### Bug fixes
+
+* 🐛 修复 app-generator 传递错误 answer ([134a89e](https://github.com/l246804/plop-generators/commit/134a89e50c9d59a28f4a60bd91c7ce13874586a3))
+
 ## [0.8.0](https://github.com/l246804/plop-generators/compare/v0.7.1...v0.8.0) (2023-09-04)
 
 
