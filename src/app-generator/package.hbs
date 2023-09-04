@@ -1,0 +1,19 @@
+{
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  {{#if scripts}}
+  "scripts": {
+    {{#each scripts}}
+    "{{@key}}": "{{this}}"{{#unless @last}},{{/unless}}
+    {{/each}}
+  },
+  {{/if}}
+  {{#if dependencies}}
+  "dependencies": {},
+  {{/if}}
+  "devDependencies": {
+    "@rhao/plop-generators": "latest",
+    "plop": "latest"
+  }
+}
