@@ -1,5 +1,12 @@
 
 
+## [0.9.0](https://github.com/l246804/plop-generators/compare/v0.8.2...v0.9.0) (2023-09-11)
+
+
+### Features
+
+* 🎸 app-generator 支持初始化 git 仓库 ([142c7d3](https://github.com/l246804/plop-generators/commit/142c7d34a2a0c98e0530ae6acde03e0838ea2192))
+
 ## [0.8.2](https://github.com/l246804/plop-generators/compare/v0.8.1...v0.8.2) (2023-09-07)
 
 
