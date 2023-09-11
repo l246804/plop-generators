@@ -6,10 +6,12 @@ import { red } from 'kolorist'
 import { rimrafSync } from 'rimraf'
 import { installPackage } from '@antfu/install-pkg'
 import { isObject, isString } from 'lodash-es'
+import { execaSync } from 'execa'
 import type { GeneratorModule } from '@/types/generator-module'
 import { requiredValidator } from '@/utils/prompt'
 import type { Recordable } from '@/types/utils'
 import { $dir } from '@/utils/path'
+import { execaOpts } from '@/utils/execa'
 
 export interface AppGeneratorOptions {
   /**
@@ -156,14 +158,23 @@ const setup: GeneratorModule<AppGeneratorOptions> = (plop, options) => {
           return msg
         },
       },
+      {
+        name: 'initRepo',
+        type: 'confirm',
+        message: 'Initialize git repository?',
+        default: true,
+      },
     ],
-    actions: () => {
+    actions: (answers = {}) => {
       if (!manifest) return []
 
       const { removeFiles = [], dependencies = [], devDependencies = [] } = manifest
 
       // cleanup invalid files
       if (removeFiles.length) rimrafSync(removeFiles, { glob: { cwd: cwd() } })
+
+      // initialize git repository
+      answers.initRepo && execaSync('git', ['init'], execaOpts)
 
       // install dependencies
       if (dependencies.length || devDependencies.length) {
