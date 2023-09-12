@@ -1,5 +1,12 @@
 
 
+## [0.9.1](https://github.com/l246804/plop-generators/compare/v0.9.0...v0.9.1) (2023-09-12)
+
+
+### Chores
+
+* 🤖 优化 vscode settings.json 配置 ([9ba777f](https://github.com/l246804/plop-generators/commit/9ba777f81b51a92cc467461fb2680e949070f246))
+
 ## [0.9.0](https://github.com/l246804/plop-generators/compare/v0.8.2...v0.9.0) (2023-09-11)
 
 
