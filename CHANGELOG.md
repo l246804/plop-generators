@@ -1,5 +1,12 @@
 
 
+## [0.9.2](https://github.com/l246804/plop-generators/compare/v0.9.1...v0.9.2) (2023-09-14)
+
+
+### Chores
+
+* 🤖 优化 changesets 配置模板 ([bfbb041](https://github.com/l246804/plop-generators/commit/bfbb04123b9c8d8ffe3b3fc6e921df1fc3d59530))
+
 ## [0.9.1](https://github.com/l246804/plop-generators/compare/v0.9.0...v0.9.1) (2023-09-12)
 
 
