@@ -2,6 +2,7 @@ import { installPackage } from '@antfu/install-pkg'
 import { uniq } from 'lodash-es'
 import { getTemplateAnswers, getTemplatePrompts, getTemplateTypes } from './utils/template'
 import type { TemplateMetadata } from './types/template'
+import { mapDeps } from './utils/deps'
 import { ensureFunction } from '@/utils/fn'
 import logger from '@/utils/logger'
 import type { GeneratorModule } from '@/types/generator-module'
@@ -66,7 +67,7 @@ const setup: GeneratorModule<ConfigGeneratorOptions> = (plop, options) => {
       const autoInstall
         = typeof options?.autoInstall !== 'undefined' ? options.autoInstall : answers.autoInstall
       if (autoInstall) {
-        installPackage(ensureFunction(metadata.deps!)(data), {
+        installPackage(mapDeps(ensureFunction(metadata.deps!)(data)), {
           dev: true,
           additionalArgs: uniq([
             ...(metadata.additionalArgs || []),
