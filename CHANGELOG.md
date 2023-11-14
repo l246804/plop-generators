@@ -1,5 +1,12 @@
 
 
+## [0.10.0](https://github.com/l246804/plop-generators/compare/v0.9.2...v0.10.0) (2023-11-14)
+
+
+### Features
+
+* 🎸 config-generator 支持安装指定版本依赖 ([034190a](https://github.com/l246804/plop-generators/commit/034190a1b3533787f8346cc9421bb85f258fc0e3))
+
 ## [0.9.2](https://github.com/l246804/plop-generators/compare/v0.9.1...v0.9.2) (2023-09-14)
 
 
