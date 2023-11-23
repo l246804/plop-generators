@@ -1,5 +1,12 @@
 
 
+## [0.10.1](https://github.com/l246804/plop-generators/compare/v0.10.0...v0.10.1) (2023-11-23)
+
+
+### Bug fixes
+
+* 🐛 修复 ts 模板不安装 node 时报错 ([ea45a28](https://github.com/l246804/plop-generators/commit/ea45a28d69dd109bffc22cf5f35feb0f92dc6912))
+
 ## [0.10.0](https://github.com/l246804/plop-generators/compare/v0.9.2...v0.10.0) (2023-11-14)
 
 
