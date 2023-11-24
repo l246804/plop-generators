@@ -1,5 +1,13 @@
 
 
+## [0.10.2](https://github.com/l246804/plop-generators/compare/v0.10.0...v0.10.2) (2023-11-24)
+
+
+### Bug fixes
+
+* 🐛 修复 deps 空指针问题 ([721c131](https://github.com/l246804/plop-generators/commit/721c131bf3ae75d73ffba1d61db6f71514a5215f))
+* 🐛 修复 ts 模板不安装 node 时报错 ([ea45a28](https://github.com/l246804/plop-generators/commit/ea45a28d69dd109bffc22cf5f35feb0f92dc6912))
+
 ## [0.10.1](https://github.com/l246804/plop-generators/compare/v0.10.0...v0.10.1) (2023-11-23)
 
 
