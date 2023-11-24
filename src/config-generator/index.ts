@@ -66,8 +66,9 @@ const setup: GeneratorModule<ConfigGeneratorOptions> = (plop, options) => {
 
       const autoInstall
         = typeof options?.autoInstall !== 'undefined' ? options.autoInstall : answers.autoInstall
-      if (autoInstall) {
-        installPackage(mapDeps(ensureFunction(metadata.deps!)(data).filter(Boolean)), {
+      const deps = (ensureFunction(metadata.deps)(data) || []).filter(Boolean)
+      if (autoInstall && deps.length > 0) {
+        installPackage(mapDeps(deps), {
           dev: true,
           additionalArgs: uniq([
             ...(metadata.additionalArgs || []),
