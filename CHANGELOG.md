@@ -1,5 +1,18 @@
 
 
+## [0.10.3](https://github.com/l246804/plop-generators/compare/v0.10.0...v0.10.3) (2023-12-13)
+
+
+### Bug fixes
+
+* 🐛 修复 deps 空指针问题 ([721c131](https://github.com/l246804/plop-generators/commit/721c131bf3ae75d73ffba1d61db6f71514a5215f))
+* 🐛 修复 ts 模板不安装 node 时报错 ([ea45a28](https://github.com/l246804/plop-generators/commit/ea45a28d69dd109bffc22cf5f35feb0f92dc6912))
+
+
+### Chores
+
+* 🤖 更新 vscode/settings.json 配置 ([daa3052](https://github.com/l246804/plop-generators/commit/daa305287ffc78878611bf0df3f8f5a3cc347087))
+
 ## [0.10.2](https://github.com/l246804/plop-generators/compare/v0.10.0...v0.10.2) (2023-11-24)
 
 
