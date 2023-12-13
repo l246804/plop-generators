@@ -1,5 +1,13 @@
 
 
+## [0.10.4](https://github.com/l246804/plop-generators/compare/v0.10.3...v0.10.4) (2023-12-13)
+
+
+### Chores
+
+* 🤖 更新 package 和 unbuild 配置模板 ([5cf8088](https://github.com/l246804/plop-generators/commit/5cf8088de961067cb6cef3117b05b624104b29ab))
+* 🤖 更新依赖版本 ([51fabf4](https://github.com/l246804/plop-generators/commit/51fabf466a87a4fe83e72c48bb6ea2e62e4bb2ea))
+
 ## [0.10.3](https://github.com/l246804/plop-generators/compare/v0.10.0...v0.10.3) (2023-12-13)
 
 
