@@ -1,30 +1,66 @@
-{{#if mkdist}}
-import type { BuildEntry } from 'unbuild'
-{{/if}}
+import type { {{#if umd}}BuildConfig, {{/if}}BuildEntry } from 'unbuild'
 import { defineBuildConfig } from 'unbuild'
+{{#if umd}}
+import { name } from './package.json'
+{{/if}}
 
-{{#if mkdist}}
 function createEntry(format: 'esm' | 'cjs') {
   return {
     input: 'src',
     builder: 'mkdist',
     format,
     ext: format === 'esm' ? 'mjs' : 'cjs',
+    esbuild: {
+      minifySyntax: true,
+    },
   } as BuildEntry
 }
+{{#if umd}}
 
+function createUMD(minify = false) {
+  return {
+    entries: ['src/index'],
+    failOnWarn: false,
+    declaration: false,
+    clean: true,
+    rollup: {
+      output: {
+        name: name
+          .slice(name.lastIndexOf('/') + 1)
+          .replace(/\.|_/g, '-')
+          .replace(/(?:^[A-Za-z]|\-[A-Za-z])/g, (match) => (match[1] || match[0]).toUpperCase()),
+        format: 'umd',
+        globals: {
+          // External Modules...
+        },
+        entryFileNames: `umd${minify ? '.min' : ''}.js`,
+      },
+      esbuild: {
+        minify,
+        target: 'ES2018',
+      },
+    },
+  } as BuildConfig
+}
 {{/if}}
-export default defineBuildConfig({
-  entries: [{{#if rollup}}'src/index'{{else}}createEntry('esm'), createEntry('cjs'){{/if}}],
-  clean: true,
-  declaration: true,
-  failOnWarn: false,
-  rollup: {
-    emitCJS: true,
-    dts: {
-      compilerOptions: {
-        noEmitOnError: false,
+
+export default defineBuildConfig([
+{{#if umd}}
+  createUMD(),
+  createUMD(true),
+{{/if}}
+  {
+    entries: [createEntry('esm'), createEntry('cjs')],
+    clean: true,
+    declaration: true,
+    failOnWarn: false,
+    rollup: {
+      emitCJS: true,
+      dts: {
+        compilerOptions: {
+          noEmitOnError: false,
+        },
       },
     },
   },
-})
+])

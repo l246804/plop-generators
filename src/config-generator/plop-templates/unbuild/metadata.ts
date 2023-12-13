@@ -8,18 +8,14 @@ export default defineMetadata({
   description: 'Unbuild configuration.',
   prompts: [
     {
-      type: 'list',
-      name: 'builder',
-      choices: [
-        { checked: true, name: 'src/index', value: 'rollup' },
-        { name: 'src', value: 'mkdist' },
-      ],
-      default: 'rollup',
+      type: 'confirm',
+      name: 'umd',
+      message: 'Needs umd of format?',
+      default: false,
     },
   ],
   deps: ['unbuild', 'typescript'],
   actions: (data) => {
-    data[data.builder] = true
     return [
       {
         type: 'add',
