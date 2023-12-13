@@ -1,5 +1,12 @@
 
 
+## [0.10.5](https://github.com/l246804/plop-generators/compare/v0.10.4...v0.10.5) (2023-12-13)
+
+
+### Chores
+
+* 🤖 更新 release-it 模板 ([c4c0d71](https://github.com/l246804/plop-generators/commit/c4c0d71b65add5bd915db63de7dfc48379924f43))
+
 ## [0.10.4](https://github.com/l246804/plop-generators/compare/v0.10.3...v0.10.4) (2023-12-13)
 
 
