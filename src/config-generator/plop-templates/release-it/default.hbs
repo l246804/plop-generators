@@ -11,8 +11,8 @@
     "releaseName": "release v${version}"
   },
   "hooks": {
-    "before:init": [{{#if build}}"pnpm run build"{{/if}}],
-    "after:bump": "echo Successfully released ${name} v${version} to ${repo.repository}."
+    "before:init": [{{#if build}}"npm run build"{{/if}}],
+    "after:release": ["echo Successfully released ${name} v${version} to ${repo.repository}."]
   },
   "plugins": {
 {{#if changelog}}
