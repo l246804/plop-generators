@@ -20,8 +20,8 @@ const DEP_VERSION_MAP: Recordable<string> = {
   '@antfu/eslint-config': '^0',
   prettier: '^3',
 
-  'release-it': '^16',
-  '@release-it/conventional-changelog': '^7',
+  'release-it': '^17',
+  '@release-it/conventional-changelog': '^8',
 
   postcss: '^8',
   'postcss-less': '^6',
