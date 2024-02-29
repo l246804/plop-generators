@@ -52,6 +52,12 @@ export default defineMetadata({
     },
     {
       type: 'confirm',
+      name: 'husky',
+      message: 'Husky?',
+      default: true,
+    },
+    {
+      type: 'confirm',
       name: 'commitizen',
       message: 'Commitizen?',
       default: true,

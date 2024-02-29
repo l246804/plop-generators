@@ -42,10 +42,10 @@
     "README.md"
   ],
   "engines": {
-    "node": ">=16"
+    "node": ">=18"
   },
   "scripts": {
-    "prepare": "run-p gen:generators",
+    "prepare": "husky install && run-p gen:generators",
     "dev": "vite build --watch",
     "build": "run-s gen:generators build:lib cp:static",
     "build:lib": "vite build",
@@ -53,46 +53,48 @@
     "gen:generators": "tsx scripts/gen-generators.ts",
     "cp:static": "tsx scripts/copy-static-files.ts",
     "release": "release-it",
-    "cz": "cz"
+    "cz": "cz",
+    "taze": "taze major -iI"
   },
   "peerDependencies": {
     "plop": ">=3"
   },
   "dependencies": {
-    "@antfu/install-pkg": "^0.1.1",
+    "@antfu/install-pkg": "^0.3.1",
     "consola": "^3.2.3",
-    "execa": "^7.2.0",
-    "fs-extra": "^11.1.1",
+    "execa": "^8.0.1",
+    "fs-extra": "^11.2.0",
     "inquirer-file-tree-selection-prompt": "^2.0.5",
-    "local-pkg": "^0.4.3",
-    "rimraf": "^5.0.1"
+    "local-pkg": "^0.5.0",
+    "rimraf": "^5.0.5"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.39.8",
-    "@commitlint/cli": "^17.7.1",
-    "@commitlint/config-conventional": "^17.7.0",
-    "@commitlint/types": "^17.4.4",
-    "@esbuild-kit/cjs-loader": "^2.4.2",
-    "@release-it/conventional-changelog": "^7.0.0",
-    "@types/fs-extra": "^11.0.1",
-    "@types/lodash-es": "^4.17.8",
-    "@types/node": "^20.4.2",
+    "@commitlint/cli": "^18.6.1",
+    "@commitlint/config-conventional": "^18.6.2",
+    "@commitlint/types": "^18.6.1",
+    "@esbuild-kit/cjs-loader": "^2.4.4",
+    "@release-it/conventional-changelog": "^8.0.1",
+    "@types/fs-extra": "^11.0.4",
+    "@types/lodash-es": "^4.17.12",
+    "@types/node": "^20.11.20",
     "commitizen": "^4.3.0",
-    "eslint": "^8.45.0",
-    "eslint-define-config": "^1.21.0",
-    "fast-glob": "^3.3.0",
+    "eslint": "^8.57.0",
+    "eslint-define-config": "^2.1.0",
+    "fast-glob": "^3.3.2",
     "git-cz": "^4.9.0",
     "husky": "^8.0.3",
     "kolorist": "^1.8.0",
     "lodash-es": "^4.17.21",
     "node-plop": "0.31.1",
     "npm-run-all": "^4.1.5",
-    "plop": "^3.1.2",
-    "release-it": "^16.1.2",
-    "rollup": "^3.26.3",
-    "tsx": "^3.12.7",
-    "typescript": "^5.1.6",
-    "vite": "^4.4.6",
-    "vite-plugin-dts": "^3.3.1"
+    "plop": "^4.0.1",
+    "release-it": "^17.1.1",
+    "rollup": "^4.12.0",
+    "taze": "^0.13.3",
+    "tsx": "^4.7.1",
+    "typescript": "^5.3.3",
+    "vite": "^5.1.4",
+    "vite-plugin-dts": "^3.7.3"
   }
 }

@@ -21,11 +21,11 @@ export default defineMetadata({
   ],
   onInstalled: () => {
     return Promise.resolve()
-      .then(() => execa('husky', ['install'], execaOpts))
+      .then(() => execa('husky', ['init'], execaOpts))
       .then(() =>
         execa(
-          'husky',
-          ['add', '.husky/commit-msg', 'npx --no-install commitlint --edit $1'],
+          'echo',
+          ['npx --no-install commitlint --edit $1', '>', '.husky/commit-msg'],
           execaOpts,
         ))
   },

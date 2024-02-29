@@ -39,6 +39,9 @@
     "node": ">=18"
   },
   "scripts": {
+    {{#if husky}}
+    "prepare": "husky",
+    {{/if}}
     {{#if build}}
     "build": "build",
     {{/if}}
