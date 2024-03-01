@@ -1,5 +1,17 @@
 
 
+## [0.10.7](https://github.com/l246804/plop-generators/compare/v0.10.5...v0.10.7) (2024-03-01)
+
+
+### Bug fixes
+
+* 🐛 修复 husky 升级后初始化失败问题 ([d6ac015](https://github.com/l246804/plop-generators/commit/d6ac0150937cfd4875b47a783cf2d1c77608f070))
+
+
+### Chores
+
+* 🤖 update deps ([1d88498](https://github.com/l246804/plop-generators/commit/1d884986f67f08bcfb214cf57c44760236d2b2f0))
+
 ## [0.10.6](https://github.com/l246804/plop-generators/compare/v0.10.5...v0.10.6) (2024-02-29)
 
 
