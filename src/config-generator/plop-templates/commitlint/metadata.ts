@@ -2,6 +2,7 @@ import { resolve } from 'node:path'
 import { cwd } from 'node:process'
 import { execa } from 'execa'
 import fs from 'fs-extra'
+import { loadPackageJSON } from 'local-pkg'
 import { defineMetadata } from '../../utils/template'
 import { $dir } from '@/utils/path'
 import logger from '@/utils/logger'
@@ -21,13 +22,24 @@ export default defineMetadata({
   ],
   onInstalled: () => {
     return Promise.resolve()
-      .then(() => execa('husky', ['init'], execaOpts))
-      .then(() =>
-        execa(
-          'echo',
-          ['npx --no-install commitlint --edit $1', '>', '.husky/commit-msg'],
-          execaOpts,
-        ))
+      .then(() => execa('husky', execaOpts))
+      .then(async () => {
+        // 读取 package.json
+        const { scripts = {} } = (await loadPackageJSON(cwd())) || {}
+        let prepare = scripts.prepare || ''
+
+        // 没有 husky 时追加命令
+        if (!prepare.includes('husky')) {
+          prepare = prepare ? `husky && ${prepare}` : 'husky'
+          execa(`npm pkg set scripts.prepare="${prepare}"`, execaOpts)
+        }
+
+        fs.writeFileSync(
+          resolve(cwd(), '.husky', 'commit-msg'),
+          'npx --no -- commitlint --edit $1',
+          { encoding: 'utf-8' },
+        )
+      })
   },
   actions: (answers) => {
     const data = {
