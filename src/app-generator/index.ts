@@ -27,7 +27,7 @@ export interface AppGeneratorOptions {
    *
    * const options = {
    *   // 地址
-   *   manifest: './manifest.mjs'
+   *   manifest: './manifest.js'
    * }
    * ```
    *
@@ -127,7 +127,7 @@ const setup: GeneratorModule<AppGeneratorOptions> = (plop, options) => {
         name: 'path',
         message: 'Manifest path:',
         type: 'input',
-        default: 'app-manifest.mjs',
+        default: 'app-manifest.js',
         when: async () => {
           try {
             manifest = await promise

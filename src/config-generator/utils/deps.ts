@@ -37,6 +37,10 @@ const DEP_VERSION_MAP: Recordable<string> = {
   'stylelint-config-standard-vue': '^1',
 
   unbuild: '^2',
+
+  vite: '^5',
+  'vite-plugin-dts': '^3',
+  rollup: '^4',
 }
 
 function joinVersion(dep: string) {

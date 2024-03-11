@@ -29,7 +29,7 @@ module.exports = function (plop) {
 ```
 
 ```ts
-// plopfile.mjs
+// plopfile.js
 import { setupGenerators } from '@rhao/plop-generators'
 
 export default function (plop) {

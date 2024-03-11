@@ -1,0 +1,94 @@
+import { resolve } from 'node:path'
+import type { UserConfig } from 'vite'
+import { defineConfig } from 'vite'
+import dts from 'vite-plugin-dts'
+import type { ExternalOption, OutputOptions } from 'rollup'
+import pkg from './package.json'
+
+// 输出格式后缀
+const esmExt = '.js'
+const cjsExt = '.cjs'
+
+// 输出目录
+const distDir = resolve(__dirname, 'dist')
+
+// 入口目录
+const entryDir = resolve(__dirname, 'src')
+const entryFile = 'src/index'
+
+// 生成外部依赖配置
+function genExternals() {
+  return [
+    ...new Set([
+      // Node 依赖
+      /node()%/,
+
+      // 预装依赖
+      ...Object.keys(pkg.peerDependencies),
+
+      // 生产依赖
+      ...Object.keys(pkg.dependencies),
+    ]),
+  ] as ExternalOption
+}
+
+// 生成模块输出配置
+function genOutput(format: 'cjs' | 'esm') {
+  return {
+    // 输出的代码格式
+    format,
+    // 是否保留源码文件结构
+    preserveModules: true,
+    // 源码根目录
+    preserveModulesRoot: entryDir,
+    // 入口文件名
+    entryFileNames: (info) =>
+      `${/node_modules/.test(info.name) ? info.name.split('node_modules/').at(-1)! : '[name]'}${
+        format === 'esm' ? esmExt : cjsExt
+      }`,
+  } as OutputOptions
+}
+
+{{#if umd}}
+// 生成 UMD 输出配置
+function genUMDOutput() {
+  const pkgName = pkg.name.slice(pkg.name.lastIndexOf('/') + 1)
+  const name = pkgName
+    .replace(/\.|_/g, '-')
+    .replace(/-(?=[0-9])/g, '')
+    .replace(/^[A-Za-z]|(?<=[0-9])[A-Za-z]/g, (m) => m.toUpperCase())
+    .replace(/-[A-Za-z]/g, (m) => m[1].toUpperCase())
+
+  return {
+    // 输出的代码格式
+    format: 'umd',
+    // 暴露模块名
+    name: moduleName,
+    // 外部依赖引用
+    globals: {
+      // eg: 'lodash': '_'
+    },
+    // 入口文件名
+    entryFileNames: `${pkgName.replace(/\.js$/, '')}.min.js`,
+  } as OutputOptions
+}
+
+{{/if}}
+export default defineConfig(() => {
+  return {
+    build: {
+      emptyOutDir: true,
+      lib: {
+        entry: entryFile,
+      },
+      rollupOptions: {
+        external: genExternals(),
+        output: [genOutput('esm'), genOutput('cjs'){{#if umd}}, genUMDOutput(){{/if}}],
+      },
+    },
+    esbuild: {
+      drop: ['console', 'debugger'],
+    },
+    plugins: [dts({ outDir: distDir, include: [entryDir] })],
+  } as UserConfig
+})
