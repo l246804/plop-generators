@@ -1,5 +1,22 @@
 
 
+## [0.11.0](https://github.com/l246804/plop-generators/compare/v0.10.5...v0.11.0) (2024-03-11)
+
+
+### Features
+
+* 🎸 新增 vite 替换 unbuild 构建库配置 ([ed81abe](https://github.com/l246804/plop-generators/commit/ed81abeb7ebeaf1f3e84d6f53c3e49c982034c0a))
+
+
+### Bug fixes
+
+* 🐛 修复 husky 升级后初始化失败问题 ([d6ac015](https://github.com/l246804/plop-generators/commit/d6ac0150937cfd4875b47a783cf2d1c77608f070))
+
+
+### Chores
+
+* 🤖 update deps ([1d88498](https://github.com/l246804/plop-generators/commit/1d884986f67f08bcfb214cf57c44760236d2b2f0))
+
 ## [0.10.7](https://github.com/l246804/plop-generators/compare/v0.10.5...v0.10.7) (2024-03-01)
 
 
