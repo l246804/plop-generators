@@ -3,6 +3,10 @@ import type { UserConfig } from 'vite'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
 import type { ExternalOption, OutputOptions } from 'rollup'
+{{#if vue}}
+import Vue from '@vitejs/plugin-vue'
+import VueJsx from '@vitejs/plugin-vue-jsx'
+{{/if}}
 import pkg from './package.json'
 
 // 输出格式后缀
@@ -80,22 +84,31 @@ export default defineConfig(() => {
   return {
     build: {
       outDir,
+      minify: false,
+      sourcemap: true,
       lib: {
         entry: entryFile,
       },
       rollupOptions: {
+        treeshake: false,
         external: genExternals(),
         output: [genOutput('esm'), genOutput('cjs'){{#if umd}}, genUMDOutput(){{/if}}],
       },
     },
     esbuild: {
-      define: {
-        __DEV__: 'process.env.NODE_ENV === "development"',
-        __PROD__: 'process.env.NODE_ENV === "production"',
-      },
       minifySyntax: false,
-      drop: ['console', 'debugger'],
     },
-    plugins: [dts({ include: [entryDir] })],
+    resolve: {
+      alias: {
+        '@': entryDir,
+      },
+    },
+    plugins: [
+      {{#if vue}}
+      Vue(),
+      VueJsx(),
+      {{/if}}
+      Dts({ include: [entryDir] }),
+    ],
   } as UserConfig
 })

@@ -1,5 +1,6 @@
 import { resolve } from 'node:path'
 import { cwd } from 'node:process'
+import { isPackageExists } from 'local-pkg'
 import { defineMetadata } from '../../utils/template'
 import { $dir } from '@/utils/path'
 
@@ -13,8 +14,21 @@ export default defineMetadata({
       message: 'Needs umd of format?',
       default: false,
     },
+    {
+      name: 'vue',
+      type: 'confirm',
+      message: 'Vue?',
+      default: false,
+      when: () => !isPackageExists('vue'),
+    },
   ],
-  deps: ['vite', 'vite-plugin-dts', 'typescript', 'rollup'],
+  deps: (answers) => [
+    'vite',
+    'vite-plugin-dts',
+    'typescript',
+    'rollup',
+    ...(answers.vue ? ['@vitejs/plugin-vue', '@vitejs/plugin-vue-jsx'] : []),
+  ],
   actions: (data) => {
     return [
       {

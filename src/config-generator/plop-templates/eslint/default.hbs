@@ -6,6 +6,11 @@ export default antfu({
       'unused-imports/no-unused-imports': ['error'],
     },
   },
+  typescript: {
+    overrides: {
+      'ts/no-namespace': ['off'],
+    },
+  },
   stylistic: {
     overrides: {
       'style/space-before-blocks': ['error', 'always'],
