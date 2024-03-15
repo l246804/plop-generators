@@ -1,5 +1,12 @@
 
 
+## [1.2.0](https://github.com/l246804/plop-generators/compare/v1.1.0...v1.2.0) (2024-03-15)
+
+
+### Features
+
+* 🎸 vite support vue ([ce2bda8](https://github.com/l246804/plop-generators/commit/ce2bda809fcd548f195f499ee9d29dbab8bb7083))
+
 ## [1.1.0](https://github.com/l246804/plop-generators/compare/v0.11.0...v1.1.0) (2024-03-15)
 
 
