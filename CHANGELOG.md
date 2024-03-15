@@ -1,5 +1,17 @@
 
 
+## [1.1.0](https://github.com/l246804/plop-generators/compare/v0.11.0...v1.1.0) (2024-03-15)
+
+
+### Features
+
+* 🎸 eslint enable formatters ([a0acb14](https://github.com/l246804/plop-generators/commit/a0acb143af84df2b12663f22df33aa97c8e311c4))
+
+
+### Refactors
+
+* 💡 refactor configurations ([cf57ad1](https://github.com/l246804/plop-generators/commit/cf57ad14bb7868b8f118c0eea765818c9a8f4170))
+
 ## [1.0.0](https://github.com/l246804/plop-generators/compare/v0.11.0...v1.0.0) (2024-03-15)
 
 
