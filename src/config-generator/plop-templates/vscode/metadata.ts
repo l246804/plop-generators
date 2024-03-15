@@ -21,29 +21,27 @@ export default defineMetadata({
       default: false,
       when: (answers) => answers.purpose === 'frontend' && !isPackageExists('vue'),
     },
-    {
-      name: 'stylelint',
-      type: 'confirm',
-      message: 'Stylelint?',
-      default: false,
-      when: (answers) => answers.purpose === 'frontend' && !isPackageExists('stylelint'),
-    },
   ],
   processAnswer: (data) => {
-    data.vue ??= true
-    data.stylelint ??= true
+    data.vue ??= isPackageExists('vue')
   },
   actions: (answers) => {
     const data = {
       ...answers,
       vue: !!answers.vue,
-      stylelint: !!answers.stylelint,
     }
     return [
       {
         type: 'add',
         templateFile: resolve($dir(__dirname), '{{purpose}}/extensions.hbs'),
         path: resolve(cwd(), '.vscode/extensions.json'),
+        data,
+        skipIfExists: true,
+      },
+      {
+        type: 'add',
+        templateFile: resolve($dir(__dirname), '{{purpose}}/global.code-snippets.hbs'),
+        path: resolve(cwd(), '.vscode/global.code-snippets'),
         data,
         skipIfExists: true,
       },

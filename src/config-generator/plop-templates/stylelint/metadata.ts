@@ -35,11 +35,15 @@ export default defineMetadata({
   ],
   processAnswer: (data) => {
     data.vue ??= true
+    if (data.lang === 'scss')
+      data.sass = !isPackageExists('sass')
   },
   deps: (data) => [
     'postcss',
     'stylelint',
     'stylelint-config-standard',
+
+    data.sass && 'sass',
 
     ...(data.order ? ['stylelint-order', 'stylelint-config-property-sort-order-smacss'] : []),
 
@@ -60,7 +64,7 @@ export default defineMetadata({
       {
         type: 'add',
         templateFile: resolve($dir(__dirname), 'default.hbs'),
-        path: resolve(cwd(), '.stylelintrc.cjs'),
+        path: resolve(cwd(), 'stylelint.config.js'),
         data,
       },
     ]

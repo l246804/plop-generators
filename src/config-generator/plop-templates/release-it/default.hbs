@@ -15,7 +15,7 @@
     "after:release": ["echo Successfully released ${name} v${version} to ${repo.repository}."]
   },
   "plugins": {
-{{#if changelog}}
+    {{#if changelog}}
     "@release-it/conventional-changelog": {
       "infile": "CHANGELOG.md",
       "ignoreRecommendedBump": true,
@@ -55,6 +55,6 @@
         ]
       }
     }
-{{/if}}
+    {{/if}}
   }
 }

@@ -27,7 +27,8 @@ const setup: GeneratorModule<ConfigGeneratorOptions> = (plop, options) => {
     }),
   )
 
-  if (templates.length === 0) return logger.warn('No templates found.')
+  if (templates.length === 0)
+    return logger.warn('No templates found.')
 
   plop.setGenerator('config-generator', {
     description: 'Generate configuration file.',
@@ -46,10 +47,12 @@ const setup: GeneratorModule<ConfigGeneratorOptions> = (plop, options) => {
         default: false,
         when: (answers) => {
           // 如果配置项里设置了该属性，则直接跳过
-          if (typeof options?.autoInstall !== 'undefined') return false
+          if (typeof options?.autoInstall !== 'undefined')
+            return false
 
           const template = templates.find(({ name }) => name === answers.type)!
-          if (!template.deps) return false
+          if (!template.deps)
+            return false
 
           const data = getTemplateAnswers(answers.type, answers)
           return ensureFunction(template.deps)(data).length > 0
@@ -59,7 +62,8 @@ const setup: GeneratorModule<ConfigGeneratorOptions> = (plop, options) => {
     actions: (answers = {}) => {
       const { type } = answers
       const metadata = templates.find(({ name }) => name === type)
-      if (!metadata) return []
+      if (!metadata)
+        return []
 
       const data = getTemplateAnswers(type, answers)
       metadata.processAnswer?.(data)

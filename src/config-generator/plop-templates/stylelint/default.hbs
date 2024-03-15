@@ -1,24 +1,24 @@
 /**
  * @type {import('stylelint').Config}
  */
-module.exports = {
+export default {
   extends: [
     'stylelint-config-standard',
-{{#if order}}
+    {{#if order}}
     'stylelint-config-property-sort-order-smacss',
-{{/if}}
-{{#if scss}}
+    {{/if}}
+    {{#if scss}}
     'stylelint-config-standard-scss',
-{{else if less}}
+    {{else if less}}
     'stylelint-config-standard-less',
-{{/if}}
-{{#if vue}}
-    'stylelint-config-standard-vue{{#if scss}}/scss{{/if}}'
-{{/if}}
+    {{/if}}
+    {{#if vue}}
+    'stylelint-config-standard-vue{{#if scss}}/scss{{/if}}',
+    {{/if}}
   ],
-{{#if order}}
+  {{#if order}}
   plugins: ['stylelint-order'],
-{{/if}}
+  {{/if}}
   ignoreFiles: ['**/*.js', '**/*.jsx', '**/*.tsx', '**/*.ts', '**/*.json', '**/*.yaml', '**/*.md'],
   rules: {
     'selector-class-pattern': null,

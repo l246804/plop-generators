@@ -97,7 +97,8 @@ function tryImportManifest(path: string) {
   return new Promise<AppGeneratorManifest>((resolve, reject) => {
     import(pathToFileURL(path).href)
       .then((res) => {
-        if (isObject(res?.default)) resolve(res.default)
+        if (isObject(res?.default))
+          resolve(res.default)
         else reject(new Error('Manifest must be an object!'))
       })
       .catch((e) => {
@@ -116,7 +117,8 @@ const setup: GeneratorModule<AppGeneratorOptions> = (plop, options) => {
     }
     else if (isString(options.manifest)) {
       const path = resolveManifestPath(options.manifest)
-      if (fs.existsSync(path)) promise = tryImportManifest(path)
+      if (fs.existsSync(path))
+        promise = tryImportManifest(path)
     }
   }
 
@@ -137,7 +139,8 @@ const setup: GeneratorModule<AppGeneratorOptions> = (plop, options) => {
         },
         validate: async (value) => {
           const valid = requiredValidator(value)
-          if (valid !== true) return valid
+          if (valid !== true)
+            return valid
 
           const path = resolveManifestPath(value)
           const isExists = fs.existsSync(path)
@@ -166,12 +169,14 @@ const setup: GeneratorModule<AppGeneratorOptions> = (plop, options) => {
       },
     ],
     actions: (answers = {}) => {
-      if (!manifest) return []
+      if (!manifest)
+        return []
 
       const { removeFiles = [], dependencies = [], devDependencies = [] } = manifest
 
       // cleanup invalid files
-      if (removeFiles.length) rimrafSync(removeFiles, { glob: { cwd: cwd() } })
+      if (removeFiles.length)
+        rimrafSync(removeFiles, { glob: { cwd: cwd() } })
 
       // initialize git repository
       answers.initRepo && execaSync('git', ['init'], execaOpts)

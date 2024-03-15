@@ -22,6 +22,7 @@ export default defineMetadata({
   ],
   onInstalled: () => {
     return Promise.resolve()
+      .then(() => execa('git', ['init'], execaOpts).catch(() => {}))
       .then(() => execa('husky', execaOpts))
       .then(async () => {
         // 读取 package.json
@@ -34,11 +35,16 @@ export default defineMetadata({
           execa(`npm pkg set scripts.prepare="${prepare}"`, execaOpts)
         }
 
-        fs.writeFileSync(
-          resolve(cwd(), '.husky', 'commit-msg'),
-          'npx --no -- commitlint --edit $1',
-          { encoding: 'utf-8' },
-        )
+        if (fs.existsSync(resolve(cwd(), '.husky'))) {
+          fs.writeFileSync(
+            resolve(cwd(), '.husky', 'commit-msg'),
+            'npx --no -- commitlint --edit $1',
+            { encoding: 'utf-8' },
+          )
+        }
+        else {
+          logger.warn('Husky initial failed!')
+        }
       })
   },
   actions: (answers) => {
@@ -60,7 +66,8 @@ export default defineMetadata({
       try {
         const obj = JSON.parse(json) || {}
         const path = obj.path || obj.commitizen?.path || ''
-        if (!path) throw new Error(`The path in "${errorFile}" must exist!`)
+        if (!path)
+          throw new Error(`The path in "${errorFile}" must exist!`)
         if (path.includes('git-cz')) {
           data.enums = 'list'
           data.maxHeaderLength = 'maxMessageLength'

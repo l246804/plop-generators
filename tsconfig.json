@@ -1,29 +1,24 @@
 {
   "compilerOptions": {
     "target": "ESNext",
+    "lib": ["ESNext"],
     "useDefineForClassFields": true,
     "module": "ESNext",
-    "lib": ["ESNext"],
-    "skipLibCheck": true,
-    "types": ["vite/client"],
-
-    /* Bundler mode */
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-
-    /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitAny": false,
-
-    "noFallthroughCasesInSwitch": true,
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "resolveJsonModule": true,
+    "types": ["vite/client"],
+    "allowImportingTsExtensions": true,
+    "strict": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noEmit": true,
+    "isolatedModules": true,
+    "skipLibCheck": true
   },
   "include": ["src/**/*.ts", "internal/**/*.ts", "scripts/**/*.ts", "**/*.config.ts"]
 }

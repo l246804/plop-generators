@@ -2,9 +2,9 @@
   "name": "{{#if scope}}@{{scopeName}}/{{/if}}{{name}}",
   "type": "module",
   "version": "0.0.0",
-{{#if description}}
+  {{#if description}}
   "description": "{{description}}",
-{{/if}}
+  {{/if}}
   "author": "{{username}} <https://github.com/{{account}}>",
   "license": "MIT",
   "homepage": "https://github.com/{{account}}/{{name}}",
@@ -31,9 +31,9 @@
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist",
+    "CHANGELOG.md",
     "README.md",
-    "CHANGELOG.md"
+    "dist"
   ],
   "engines": {
     "node": ">=18"
@@ -61,6 +61,6 @@
     {{#if changesets}}
     "npm-run-all": "latest",
     {{/if}}
-    "plop": "latest"
+    "plop": "^4"
   }
 }

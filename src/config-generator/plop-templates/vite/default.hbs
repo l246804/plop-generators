@@ -10,7 +10,7 @@ const esmExt = '.js'
 const cjsExt = '.cjs'
 
 // 输出目录
-const distDir = resolve(__dirname, 'dist')
+const outDir = resolve(__dirname, 'dist')
 
 // 入口目录
 const entryDir = resolve(__dirname, 'src')
@@ -24,10 +24,12 @@ function genExternals() {
       /node()%/,
 
       // 预装依赖
-      ...Object.keys(pkg.peerDependencies),
+      // @ts-expect-error
+      ...Object.keys(pkg.peerDependencies || {}),
 
       // 生产依赖
-      ...Object.keys(pkg.dependencies),
+      // @ts-expect-error
+      ...Object.keys(pkg.dependencies || {}),
     ]),
   ] as ExternalOption
 }
@@ -63,7 +65,7 @@ function genUMDOutput() {
     // 输出的代码格式
     format: 'umd',
     // 暴露模块名
-    name: moduleName,
+    name,
     // 外部依赖引用
     globals: {
       // eg: 'lodash': '_'
@@ -77,7 +79,7 @@ function genUMDOutput() {
 export default defineConfig(() => {
   return {
     build: {
-      emptyOutDir: true,
+      outDir,
       lib: {
         entry: entryFile,
       },
@@ -87,8 +89,13 @@ export default defineConfig(() => {
       },
     },
     esbuild: {
+      define: {
+        __DEV__: 'process.env.NODE_ENV === "development"',
+        __PROD__: 'process.env.NODE_ENV === "production"',
+      },
+      minifySyntax: false,
       drop: ['console', 'debugger'],
     },
-    plugins: [dts({ outDir: distDir, include: [entryDir] })],
+    plugins: [dts({ include: [entryDir] })],
   } as UserConfig
 })

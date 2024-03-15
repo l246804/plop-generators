@@ -16,7 +16,8 @@ export function createFileTreeSelectionPrompt(opts: QuestionOptions): PromptQues
   return {
     onlyShowDir: true,
     transformer(input) {
-      if (input === cwd()) return '.(current directory)'
+      if (input === cwd())
+        return '.(current directory)'
       const name = input.split(sep).pop()
       if (name[0] === '.' || name === 'node_modules')
         return gray(name)

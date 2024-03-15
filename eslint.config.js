@@ -12,15 +12,4 @@ export default antfu({
       'style/arrow-parens': ['error', 'always'],
     },
   },
-  {{#if vue}}
-  vue: {
-    overrides: {
-      'vue/component-name-in-template-casing': [
-        'error',
-        'PascalCase',
-        { registeredComponentsOnly: false },
-      ],
-    },
-  },
-  {{/if}}
 })

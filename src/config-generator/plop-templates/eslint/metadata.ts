@@ -2,7 +2,6 @@ import { resolve } from 'node:path'
 import { cwd } from 'node:process'
 import { isPackageExists } from 'local-pkg'
 import { defineMetadata } from '../../utils/template'
-import { isVue2 } from '@/utils/pkg'
 import { $dir } from '@/utils/path'
 
 export default defineMetadata({
@@ -10,18 +9,10 @@ export default defineMetadata({
   description: 'ESLint configuration.',
   deps: (answers) => [
     'eslint',
-    'eslint-define-config',
     '@antfu/eslint-config',
-    answers.ts && 'typescript',
+    answers.vue && 'eslint-plugin-format',
   ],
   prompts: [
-    {
-      name: 'ts',
-      type: 'confirm',
-      message: 'Typescript?',
-      default: true,
-      when: () => !isPackageExists('typescript'),
-    },
     {
       name: 'vue',
       type: 'confirm',
@@ -31,16 +22,14 @@ export default defineMetadata({
     },
   ],
   processAnswer: (data) => {
-    data.ts ??= true
     data.vue ??= true
   },
   actions: (data) => {
-    data.vue2 = isVue2()
     return [
       {
         type: 'add',
         templateFile: resolve($dir(__dirname), 'default.hbs'),
-        path: resolve(cwd(), '.eslintrc.cjs'),
+        path: resolve(cwd(), 'eslint.config.js'),
         data,
       },
     ]
