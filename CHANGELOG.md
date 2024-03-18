@@ -1,5 +1,12 @@
 
 
+## [1.2.1](https://github.com/l246804/plop-generators/compare/v1.2.0...v1.2.1) (2024-03-18)
+
+
+### Chores
+
+* 🤖 优化 vite 配置模板 ([9c6b501](https://github.com/l246804/plop-generators/commit/9c6b501877fab3aa5dd1c36eb9182fde650d3147))
+
 ## [1.2.0](https://github.com/l246804/plop-generators/compare/v1.1.0...v1.2.0) (2024-03-15)
 
 
