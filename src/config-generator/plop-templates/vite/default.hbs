@@ -25,7 +25,7 @@ function genExternals() {
   return [
     ...new Set([
       // Node 依赖
-      /node()%/,
+      /^node(:.+)?$/,
 
       // 预装依赖
       // @ts-expect-error
@@ -76,6 +76,8 @@ function genUMDOutput() {
     },
     // 入口文件名
     entryFileNames: `${pkgName.replace(/\.js$/, '')}.min.js`,
+    // 导出模式
+    exports: 'named',
   } as OutputOptions
 }
 
